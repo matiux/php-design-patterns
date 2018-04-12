@@ -1,6 +1,6 @@
 # PHP Design Patterns
 
-Based on Head First Design Patterns Book
+Based on the book "Head First Design Patterns"
 
 ## Getting Started
 ### Run Docker container
