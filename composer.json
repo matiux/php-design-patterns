@@ -1,0 +1,12 @@
+{
+  "name": "matiux/design_patterns",
+  "license": "",
+  "autoload": {
+    "psr-4": {
+      "DesignPatterns\\": "./"
+    }
+  },
+  "require": {
+    "php": ">=7.1"
+  }
+}
