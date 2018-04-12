@@ -11,7 +11,7 @@ Based on the book "Head First Design Patterns"
 ```
 ### Strategy pattern
 ```
-php php Strategy/MiniDuckSimulator.php
+php Strategy/MiniDuckSimulator.php
 ```
 ### Decorator pattern
 ```
