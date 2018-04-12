@@ -13,6 +13,10 @@ Based on the book "Head First Design Patterns"
 ```
 php Strategy/MiniDuckSimulator.php
 ```
+### Observer
+```
+php Observer/WeatherStation.php
+```
 ### Decorator pattern
 ```
 php Decorator/StarbuzzCoffee.php
