@@ -21,3 +21,7 @@ php Observer/WeatherStation.php
 ```
 php Decorator/StarbuzzCoffee.php
 ```
+### Simple Factory
+```
+Sola lettua
+```
