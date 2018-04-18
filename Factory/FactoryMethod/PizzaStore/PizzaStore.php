@@ -1,8 +1,6 @@
 <?php
 
-namespace DesignPatterns\Factory\FactoryMethod;
-
-use DesignPatterns\Factory\FactoryMethod\Pizza\Pizza;
+namespace DesignPatterns\Factory\FactoryMethod\PizzaStore;
 
 abstract class PizzaStore
 {
@@ -18,5 +16,11 @@ abstract class PizzaStore
         return $pizza;
     }
 
-    public abstract function createPizza(string $type): Pizza;
+    /**
+     * Factory method
+     *
+     * @param string $type
+     * @return Pizza
+     */
+    protected abstract function createPizza(string $type): Pizza;
 }

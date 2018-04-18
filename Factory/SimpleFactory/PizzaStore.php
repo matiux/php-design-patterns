@@ -16,6 +16,9 @@ class PizzaStore
 
     public function orderPizza(): Pizza
     {
+        /**
+         * Factory object
+         */
         $pizza = $this->simplePizzaFactory->createPizza('margherita');
 
         $pizza->prepare();
