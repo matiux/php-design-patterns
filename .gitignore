@@ -1,2 +1,4 @@
 .idea
 vendor
+docker/data/composer/cache/*
+!docker/data/composer/cache/.gitkeep
