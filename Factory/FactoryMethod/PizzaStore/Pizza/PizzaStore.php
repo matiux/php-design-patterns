@@ -1,10 +1,10 @@
 <?php
 
-namespace DesignPatterns\Factory\FactoryMethod\PizzaStore;
+namespace DesignPatterns\Factory\FactoryMethod\PizzaStore\Pizza;
 
 abstract class PizzaStore
 {
-    public function orderPizza(string $type): Pizza
+    final public function orderPizza(string $type): Pizza
     {
         $pizza = $this->createPizza($type);
 

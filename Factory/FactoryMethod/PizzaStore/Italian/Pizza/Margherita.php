@@ -2,19 +2,30 @@
 
 namespace DesignPatterns\Factory\FactoryMethod\PizzaStore\Italian\Pizza;
 
-use DesignPatterns\Factory\FactoryMethod\PizzaStore\Pizza;
+use DesignPatterns\Factory\FactoryMethod\PizzaStore\Pizza\Pizza;
+use DesignPatterns\Factory\FactoryMethod\PizzaStore\PizzaIngredientFactory;
 
 class Margherita extends Pizza
 {
-    public function __construct()
+    protected $pizzaIngredientFactory;
+
+    public function __construct(PizzaIngredientFactory $pizzaIngredientFactory)
     {
         parent::__construct();
 
-        $this->name = 'Margherita';
-        $this->dough = 'Integrale';
-        $this->sauce = 'Pomodoro Bio';
+        $this->pizzaIngredientFactory = $pizzaIngredientFactory;
+    }
 
-        $this->toppings->append('Basilico');
-        $this->toppings->append('Mozzarella di bufala');
+    public function prepare(): void
+    {
+        echo "Preparo la pizza {$this->name}\n";
+        echo "Preparo gli ingredienti:\n";
+
+        $this->dough = $this->pizzaIngredientFactory->createDough();
+        $this->sauce = $this->pizzaIngredientFactory->createSauce();
+        $this->cheese = $this->pizzaIngredientFactory->createCheese();
+        $this->veggies = $this->pizzaIngredientFactory->createVeggies();
+
+        echo "\t" . $this->dough->getName();
     }
 }
