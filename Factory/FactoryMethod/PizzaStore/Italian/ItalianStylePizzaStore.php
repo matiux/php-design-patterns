@@ -2,7 +2,8 @@
 
 namespace DesignPatterns\Factory\FactoryMethod\PizzaStore\Italian;
 
-use DesignPatterns\Factory\FactoryMethod\PizzaStore\Italian\Pizza\Margherita;
+use DesignPatterns\Factory\FactoryMethod\PizzaStore\Italian\Pizza\ItalianMargherita;
+use DesignPatterns\Factory\FactoryMethod\PizzaStore\Italian\Pizza\ItalianMelanzane;
 use DesignPatterns\Factory\FactoryMethod\PizzaStore\Pizza\Pizza;
 use DesignPatterns\Factory\FactoryMethod\PizzaStore\Pizza\PizzaStore;
 
@@ -17,12 +18,13 @@ class ItalianStylePizzaStore extends PizzaStore
     protected function createPizza(string $type): Pizza
     {
         $pizza = null;
-        $pizzaIngredientFactory = new ItalianPizzaIngredientFactory();
 
         switch ($type) {
             case 'margherita':
-                $pizza = new Margherita($pizzaIngredientFactory);
-                $pizza->setName('Margherita Italiana');
+                $pizza = new ItalianMargherita();
+                break;
+            case 'melanzane':
+                $pizza = new ItalianMelanzane();
                 break;
         }
 
