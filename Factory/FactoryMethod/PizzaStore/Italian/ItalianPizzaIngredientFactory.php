@@ -4,14 +4,16 @@ namespace DesignPatterns\Factory\FactoryMethod\PizzaStore\Italian;
 
 use DesignPatterns\Factory\FactoryMethod\PizzaStore\Ingredient\Cheese;
 use DesignPatterns\Factory\FactoryMethod\PizzaStore\Ingredient\Dough;
+use DesignPatterns\Factory\FactoryMethod\PizzaStore\Ingredient\Eggplant;
+use DesignPatterns\Factory\FactoryMethod\PizzaStore\Ingredient\PizzaIngredientFactory;
 use DesignPatterns\Factory\FactoryMethod\PizzaStore\Ingredient\Sauce;
 use DesignPatterns\Factory\FactoryMethod\PizzaStore\Ingredient\Veggie;
 use DesignPatterns\Factory\FactoryMethod\PizzaStore\Italian\Ingredient\BasilicoVeggie;
 use DesignPatterns\Factory\FactoryMethod\PizzaStore\Italian\Ingredient\IntegraleDough;
+use DesignPatterns\Factory\FactoryMethod\PizzaStore\Italian\Ingredient\ItalianMelanzanaBio;
 use DesignPatterns\Factory\FactoryMethod\PizzaStore\Italian\Ingredient\MozzarellaDiBufalaCheese;
 use DesignPatterns\Factory\FactoryMethod\PizzaStore\Italian\Ingredient\OriganoVeggie;
 use DesignPatterns\Factory\FactoryMethod\PizzaStore\Italian\Ingredient\PomodoroFrescoSauce;
-use DesignPatterns\Factory\FactoryMethod\PizzaStore\PizzaIngredientFactory;
 
 class ItalianPizzaIngredientFactory implements PizzaIngredientFactory
 {
@@ -40,5 +42,10 @@ class ItalianPizzaIngredientFactory implements PizzaIngredientFactory
         $veggies->append(new BasilicoVeggie());
 
         return $veggies;
+    }
+
+    public function createEggplant(): Eggplant
+    {
+        return new ItalianMelanzanaBio();
     }
 }

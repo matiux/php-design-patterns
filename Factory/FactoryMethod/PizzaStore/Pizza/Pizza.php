@@ -9,29 +9,25 @@ abstract class Pizza
     protected $veggies = null;
     protected $cheese = null;
     protected $sauce = null;
+    protected $eggplant = null;
+
+    protected $pizzaIngredientFactory;
 
     public function __construct()
     {
         $this->veggies = new \ArrayObject();
     }
 
-    abstract public function prepare(): void;
-
-//    public function prepare(): void
-//    {
-//        echo "Preparo la pizza {$this->name}\n";
-//        echo "Stendo l'impasto {$this->dough}\n";
-//        echo "Aggiungo la salsa {$this->sauce}\n";
-//        echo "Aggiungo i condimenti:\n";
-//        foreach ($this->toppings as $topping) {
-//
-//            echo "\t$topping\n";
-//        }
-//    }
-
-    public function setName(string $name): void
+    public function prepare(): void
     {
-        $this->name = $name;
+        echo "Preparo la pizza {$this->name}\n";
+        echo "Stendo l'impasto {$this->dough}\n";
+        echo "Aggiungo la salsa {$this->sauce}\n";
+        echo "Aggiungo le verdure:\n";
+        foreach ($this->veggies as $veggy) {
+
+            echo "\t$veggy\n";
+        }
     }
 
     public function bake(): void
