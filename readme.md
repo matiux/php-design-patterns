@@ -33,3 +33,7 @@ php Factory/FactoryMethod/Client.php
 ```
 php Factory/AbstractFactory/Client.php
 ```
+### Singleton
+```
+php Singleton/Client.php
+```
