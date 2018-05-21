@@ -37,3 +37,7 @@ php Factory/AbstractFactory/Client.php
 ```
 php Singleton/Client.php
 ```
+### Command
+```
+php Command/Client.php
+```
