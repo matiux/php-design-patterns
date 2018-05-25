@@ -13,7 +13,7 @@ Based on the book "Head First Design Patterns"
 ```
 php Strategy/MiniDuckSimulator.php
 ```
-### Observer
+### Observer pattern
 ```
 php Observer/WeatherStation.php
 ```
@@ -21,25 +21,26 @@ php Observer/WeatherStation.php
 ```
 php Decorator/StarbuzzCoffee.php
 ```
-### Simple Factory
+### Simple Factory pattern
 ```
 Sola lettua
 ```
-### Factory Method
+### Factory Method pattern
 ```
 php Factory/FactoryMethod/Client.php
 ```
-### Abstract Factory
+### Abstract Factory pattern
 ```
 php Factory/AbstractFactory/Client.php
 ```
-### Singleton
+### Singleton pattern
 ```
 php Singleton/Client.php
 ```
-### Command
+### Command pattern
 ```
 php Command/Simple/Client.php
 php Command/Advance/Client.php
 php Command/Undo/Client.php
+php Command/Macro/Client.php
 ```
