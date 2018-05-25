@@ -1,8 +1,8 @@
 <?php
 
-namespace DesignPatterns\Command\Command;
+namespace DesignPatterns\Command\Simple\Command;
 
-use DesignPatterns\Command\Receiver\GarageDoor;
+use DesignPatterns\Command\Simple\Receiver\GarageDoor;
 
 class GarageDoorOpenCommand implements Command
 {

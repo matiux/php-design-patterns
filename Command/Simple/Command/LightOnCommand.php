@@ -1,8 +1,8 @@
 <?php
 
-namespace DesignPatterns\Command\Command;
+namespace DesignPatterns\Command\Simple\Command;
 
-use DesignPatterns\Command\Receiver\Light;
+use DesignPatterns\Command\Simple\Receiver\Light;
 
 class LightOnCommand implements Command
 {

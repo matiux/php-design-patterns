@@ -1,6 +1,6 @@
 <?php
 
-namespace DesignPatterns\Command\Receiver;
+namespace DesignPatterns\Command\Simple\Receiver;
 
 class GarageDoor
 {

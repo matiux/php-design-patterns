@@ -1,6 +1,6 @@
 <?php
 
-namespace DesignPatterns\Command\Command;
+namespace DesignPatterns\Command\Simple\Command;
 
 interface Command
 {

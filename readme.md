@@ -39,5 +39,7 @@ php Singleton/Client.php
 ```
 ### Command
 ```
-php Command/Client.php
+php Command/Simple/Client.php
+php Command/Advance/Client.php
+php Command/Undo/Client.php
 ```

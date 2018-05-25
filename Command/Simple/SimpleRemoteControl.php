@@ -1,8 +1,8 @@
 <?php
 
-namespace DesignPatterns\Command;
+namespace DesignPatterns\Command\Simple;
 
-use DesignPatterns\Command\Command\Command;
+use DesignPatterns\Command\Simple\Command\Command;
 
 class SimpleRemoteControl
 {
