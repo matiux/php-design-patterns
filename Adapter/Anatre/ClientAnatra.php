@@ -7,11 +7,11 @@ use DesignPatterns\Adapter\Anatre\GermanoReale;
 use DesignPatterns\Adapter\Anatre\TacchinoAdapter;
 use DesignPatterns\Adapter\Anatre\TacchinoSelvatico;
 
-function runAnatra(Anatra $anatra)
-{
-    $anatra->quack();
-    $anatra->vola();
-}
+/**
+ * 1) The client makes a request to the adapter by calling a method on it using the target interface.
+ * 2) The adapter translates the request into one or more calls on the adaptee using the adaptee interface.
+ * 3) The client receives the results of the call and never knows there is an adapter doing the translation.
+ */
 
 $germanoReale = new GermanoReale();
 
@@ -34,3 +34,9 @@ echo "L'adapter del tacchino dice" . "\n";
 runAnatra($tacchinoAdapter);
 
 echo '---------' . "\n";
+
+function runAnatra(Anatra $anatra)
+{
+    $anatra->quack();
+    $anatra->vola();
+}
