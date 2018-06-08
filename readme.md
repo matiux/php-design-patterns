@@ -60,3 +60,8 @@ Il pattern Adapter converte l'interfaccia di una classe in un'altra che il clien
 php Adapter/Anatre/ClientAnatra.php 
 php Adapter/Anatre/ClientTacchino.php 
 ```
+### Facade pattern
+il pattern Facade fornisce un'interfaccia unificata a un insieme di interfacce in un sottosistema. Definisce un'interfaccia di livello superiore che semplifica l'utilizzo del sottosistema. La differenza tra Facade e Adapter è nel loro intento. L'intento del pattern Adapter è di modificare un'interfaccia in modo che corrisponda a quella che un client si aspetta. L'intento del pattern Facade è di fornire un'interfaccia semplificata a un sottosistema.
+```
+php Facade/Client.php
+```
