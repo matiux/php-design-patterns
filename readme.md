@@ -55,7 +55,7 @@ php Command/Undo/Client.php
 php Command/Macro/Client.php
 ```
 ### Adapter pattern
-Il pattern Adapter converte l'interfaccia di una classe in un'altra che il client si aspetta.
+Il pattern Adapter converte l'interfaccia di una classe in un'altra che il client si aspetta. L'Adapter consente alle classi di lavorare insieme quando non potrebbero a causa di interfacce incompatibili.
 ```
 php Adapter/Anatre/ClientAnatra.php 
 php Adapter/Anatre/ClientTacchino.php 
