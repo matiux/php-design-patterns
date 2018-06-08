@@ -9,6 +9,8 @@ Based on the book "Head First Design Patterns"
 ./dc up -d
 ./dc exec --user utente php bash
 ```
+## Patterns list
+
 ### Strategy pattern
 ```
 php Strategy/MiniDuckSimulator.php
