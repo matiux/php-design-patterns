@@ -65,7 +65,7 @@ il pattern Facade fornisce un'interfaccia unificata a un insieme di interfacce i
 ```
 php Facade/Client.php
 ```
-### Template method patterns
+### Template method pattern
 Il pattern Template Method definisce lo scheletro di un algoritmo in un metodo, delegando alcuni passaggi alle sottoclassi. Il pattern Template Method consente alle sottoclassi diridefinire determinati passaggi di un algoritmo senza modificarne la struttura.  
 ```
 php TemplateMethod/NoHook/Client.php
