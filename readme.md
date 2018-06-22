@@ -88,6 +88,10 @@ php TemplateMethod/Hook/Client.php
 In questa sezione, basandomi sul libro *Domain-Driven Design in PHP – Carlos Buenosvinos, Christian Soronellas and Keyvan Akbary*, mostro un processo di refactoring da spaghetti code a organizzazione del codice tramite l'architettura esagonale
 
 L'architettura esagonale consente a un'applicazione di essere ugualmente guidata da utenti, programmi, test automatizzati o script batch e di essere sviluppata e testata separatamente dai suoi eventuali dispositivi e database.
+
+```
+php ExagonalArchitecture/build.php
+```
 ```
 php ExagonalArchitecture/Step01/client.php
 php ExagonalArchitecture/Step02/client.php
