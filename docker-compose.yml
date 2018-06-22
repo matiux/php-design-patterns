@@ -1,11 +1,33 @@
 version: '3'
 
+volumes:
+  app_database: {}
+
 services:
   php:
     build: ./docker/php
     tty: true # -t option in docker
     stdin_open: true # -i option in docker
-    hostname: idrolab_datapool
+    hostname: host
     volumes:
       - ./:/var/www/app
       - ./docker/data/composer:/home/utente/.composer
+
+  adminer:
+    image: adminer
+    restart: always
+    ports:
+      - 8081:8080
+
+  servicedb:
+    image: mysql:5.7
+    volumes:
+      - app_database:/var/lib/mysql
+    command: mysqld --sql_mode=""
+    ports:
+      - '3307:3306'
+    environment:
+      - MYSQL_ROOT_PASSWORD=rootpassword
+      - MYSQL_USER=user
+      - MYSQL_PASSWORD=password
+      - MYSQL_DATABASE=idy

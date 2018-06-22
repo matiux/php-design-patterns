@@ -9,7 +9,16 @@ Based on the book "Head First Design Patterns"
 ./dc up -d
 ./dc exec --user utente php bash
 ```
-## Patterns list
+
+#### Database MySql
+```
+Adminer: localhost:8081
+Host dentro al container: servicedb:3306
+Host fuori dal container: 127.0.0.1:3307
+Utente: user
+Password: password
+```
+## Lista dei pattern
 
 ### Strategy pattern
 Il pattern Strategy definisce una famiglia di algoritmi, incapsula ciascuno e li rende intercambiabili. La strategia consente all'algoritmo di variare in modo indipendente dai client che lo utilizzano.
@@ -70,4 +79,22 @@ Il pattern Template Method definisce lo scheletro di un algoritmo in un metodo, 
 ```
 php TemplateMethod/NoHook/Client.php
 php TemplateMethod/Hook/Client.php
+```
+
+## Extra
+
+### Hexagonal Architecture (Ports and Adapters)
+
+In questa sezione, basandomi sul libro *Domain-Driven Design in PHP – Carlos Buenosvinos, Christian Soronellas and Keyvan Akbary*, mostro un processo di refactoring da spaghetti code a organizzazione del codice tramite l'architettura esagonale
+
+L'architettura esagonale consente a un'applicazione di essere ugualmente guidata da utenti, programmi, test automatizzati o script batch e di essere sviluppata e testata separatamente dai suoi eventuali dispositivi e database.
+```
+php ExagonalArchitecture/Step01/client.php
+php ExagonalArchitecture/Step02/client.php
+php ExagonalArchitecture/Step03/client.php
+```
+```
+php ExagonalArchitecture/Step04/client.php
+php ExagonalArchitecture/Step04/console app:create-idea 'Flying pig' Matiux
+vendor/bin/phpunit
 ```
