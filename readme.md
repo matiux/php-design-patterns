@@ -89,14 +89,18 @@ In questa sezione, basandomi sul libro *Domain-Driven Design in PHP – Carlos B
 
 L'architettura esagonale consente a un'applicazione di essere ugualmente guidata da utenti, programmi, test automatizzati o script batch e di essere sviluppata e testata separatamente dai suoi eventuali dispositivi e database.
 
+Preparare il database per far girare gli esempi
 ```
 php ExagonalArchitecture/build.php
 ```
+
+I primi 3 step di refactoring
 ```
 php ExagonalArchitecture/Step01/client.php
 php ExagonalArchitecture/Step02/client.php
 php ExagonalArchitecture/Step03/client.php
 ```
+Step finale con implementazione con vari delivery e test
 ```
 php ExagonalArchitecture/Step04/client.php
 php ExagonalArchitecture/Step04/console app:create-idea 'Flying pig' Matiux
