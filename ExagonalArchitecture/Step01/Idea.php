@@ -1,6 +1,6 @@
 <?php
 
-namespace DesignPatterns\ExagonalArchitecture\Model;
+namespace DesignPatterns\ExagonalArchitecture\Step01;
 
 use Ramsey\Uuid\UuidInterface;
 

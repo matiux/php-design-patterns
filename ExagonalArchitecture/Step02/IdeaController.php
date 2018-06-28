@@ -8,17 +8,20 @@ use Ramsey\Uuid\UuidInterface;
 
 /**
  * Disaccopiamo la gestione del database usando un Repository.
- * In questo modo il controller parla delle regole di business dove il repository è un concetto di business:
+ * In questo modo il controller parla delle regole di business dove il repository è un concetto
+ * di business:
  * Il repository è un posto da cui prendere o in cui mettere le idee
  *
  * Repository by Martin Fowler:
- * mediates between the domain and data mapping layers using a collection-like interface for accessing domain objects.
+ * mediates between the domain and data mapping layers using a collection-like interface
+ * for accessing domain objects.
  *
- * Con il repository vediamo uno dei lati dell'esagono, il lato "persistenza" che però non è ancora ben disegnato in quanto
- * c'è ancora qualche relazione tra ciò che un IdeaRepository è e come è implementato.
+ * Con il repository vediamo uno dei lati dell'esagono, il lato "persistenza" che però
+ * non è ancora ben disegnato in quanto c'è ancora qualche relazione tra ciò che un
+ * IdeaRepository è e come è implementato.
  *
- * Nello Step03 vedremo come separare realmente il limite dell'applicazione da quello dell'infrastruttura disaccoppiando
- * il comportamento dall'implementazione
+ * Nello Step03 vedremo come separare realmente il limite dell'applicazione da
+ * quello dell'infrastruttura disaccoppiando il comportamento dall'implementazione
  */
 class IdeaController
 {
