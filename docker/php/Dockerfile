@@ -1,3 +1,3 @@
-FROM matiux/php:7.1-fpm-2.0.0
-RUN apt-get update && apt-get install -y && \
-    /usr/local/bin/composer self-update
+FROM matiux/php:7.2-fpm-1.0.0
+
+RUN /usr/local/bin/composer self-update

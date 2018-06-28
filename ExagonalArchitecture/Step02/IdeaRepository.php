@@ -3,7 +3,6 @@
 namespace DesignPatterns\ExagonalArchitecture\Step02;
 
 use DesignPatterns\ExagonalArchitecture\ConnectionFactory;
-use DesignPatterns\ExagonalArchitecture\Model\Idea;
 use Ramsey\Uuid\Uuid;
 use Ramsey\Uuid\UuidInterface;
 
