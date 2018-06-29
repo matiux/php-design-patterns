@@ -1,8 +1,8 @@
 <?php
 
-use DesignPatterns\Factory\AbstractFactory\PizzaStore\Italian\ItalianStylePizzaStore;
-
 require __DIR__ . '/../../vendor/autoload.php';
+
+use DesignPatterns\Factory\AbstractFactory\PizzaStore\Italian\ItalianStylePizzaStore;
 
 /**
  * The Abstract Factory Pattern provides an interface for creating families of related or dependent
