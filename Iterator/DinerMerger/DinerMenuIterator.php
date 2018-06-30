@@ -14,7 +14,7 @@ class DinerMenuIterator implements Iterator
 
     public function hasNext(): bool
     {
-        if ($this->position >= $this->menuItems || $this->menuItems[$this->position] == null) {
+        if ($this->position >= $this->menuItems || !isset($this->menuItems[$this->position])) {
             return false;
         }
 

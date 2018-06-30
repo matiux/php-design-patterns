@@ -1,6 +1,6 @@
 <?php
 
-namespace DesignPatterns\Iterator\DinerMerger;
+namespace DesignPatterns\Iterator\DinerMergerI;
 
 class Waitress
 {
@@ -24,11 +24,9 @@ class Waitress
         $this->doPrintMenu($dinerIterator);
     }
 
-    private function doPrintMenu(Iterator $iterator): void
+    private function doPrintMenu(\Iterator $iterator): void
     {
-        while ($iterator->hasNext()) {
-
-            $menuItem = $iterator->next();
+        foreach ($iterator as $menuItem) {
 
             echo sprintf("%s, $%s -- %s\n", $menuItem->getName(), $menuItem->getPrice(), $menuItem->getDescription());
         }
@@ -40,11 +38,9 @@ class Waitress
         $this->doPrintVegetarianMenu($this->dinerMenu->createIterator());
     }
 
-    private function doPrintVegetarianMenu(Iterator $iterator): void
+    private function doPrintVegetarianMenu(\Iterator $iterator): void
     {
-        while ($iterator->hasNext()) {
-
-            $menuItem = $iterator->next();
+        foreach ($iterator as $menuItem) {
 
             if ($menuItem->isVegetarian()) {
 
@@ -67,10 +63,9 @@ class Waitress
         return false;
     }
 
-    private function isVegetarian(string $name, Iterator $iterator): bool
+    private function isVegetarian(string $name, \Iterator $iterator): bool
     {
-        while ($iterator->hasNext()) {
-            $menuItem = $iterator->next();
+        foreach ($iterator as $menuItem) {
 
             if ($menuItem->getName() === $name) {
                 if ($menuItem->isVegetarian()) {

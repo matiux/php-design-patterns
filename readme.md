@@ -80,7 +80,14 @@ Il pattern Template Method definisce lo scheletro di un algoritmo in un metodo, 
 php TemplateMethod/NoHook/Client.php
 php TemplateMethod/Hook/Client.php
 ```
+### Iterator pattern
+Il pattern Iterator fornisce un modo per accedere sequenzialmente agli elementi di un oggetto aggregato senza esporre la sua rappresentazione sottostante. Ma l'effetto dell'utilizzo degli iteratori nel tuo progetto è altrettanto importante: una volta che hai un modo uniforme di accedere agli elementi di tutti i tuoi oggetti aggregati, puoi scrivere codice polimorfico che funzioni con uno qualsiasi di questi aggregati, potendo usare indiscriminatamente array, ArrayObject, collezioni di dominio ecc, a condizione che riesca a impossessarsi di un Iterator. Un altra cosa importante è che il pattern Iterator assume la responsabilità di attraversare gli elementi e attribuisce tale responsabilità all'oggetto iteratore, non all'oggetto aggregato. Ciò non solo mantiene più semplice l'interfaccia aggregata e l'implementazione, ma rimuove la responsabilità dell'iterazione dall'aggregazione e mantiene l'aggregato focalizzato sulle cose su cui dovrebbe essere focalizzato (gestendo una collezione di oggetti), non sull'iterazione.
+```
+php DinerMerger/client.php
 
+#Con interfaccia Iterator di PHP
+php DinerMergerI/client.php
+```
 ## Extra
 
 ### Hexagonal Architecture (Ports and Adapters)
