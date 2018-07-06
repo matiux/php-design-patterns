@@ -88,6 +88,11 @@ php DinerMerger/client.php
 #Con interfaccia Iterator di PHP
 php DinerMergerI/client.php
 ```
+### Composite pattern
+Il pattern Composite consente di comporre oggetti in strutture ad albero per rappresentare gerarchie intere. Il pattern Composite consente ai client di trattare in modo uniforme singoli oggetti e composizioni di oggetti. Usando una struttura composita, possiamo applicare le stesse operazioni sia sui dati compositi che su singoli oggetti. In altre parole, nella maggior parte dei casi possiamo ignorare le differenze tra le composizioni di oggetti e oggetti individuali.
+```
+
+```
 ## Extra
 
 ### Hexagonal Architecture (Ports and Adapters)
