@@ -6,22 +6,32 @@ class Waitress
 {
     private $pancakeHouseMenu;
     private $dinerMenu;
+    private $cafeMenu;
 
-    public function __construct(Menu $pancakeHouseMenu, Menu $dinerMenu)
+    public function __construct(Menu $pancakeHouseMenu, Menu $dinerMenu, CafeMenu $cafeMenu)
     {
         $this->pancakeHouseMenu = $pancakeHouseMenu;
         $this->dinerMenu = $dinerMenu;
+        $this->cafeMenu = $cafeMenu;
     }
 
+    /**
+     * Violazione del principio Open Closed (Open Closed Principle)
+     */
     public function printMenu()
     {
         $pancakeIterator = $this->pancakeHouseMenu->createIterator();
         $dinerIterator = $this->dinerMenu->createIterator();
+        $cafeIterator = $this->cafeMenu->createIterator();
 
         echo sprintf("MENU\n-----\nBREAKFAST:\n");
         $this->doPrintMenu($pancakeIterator);
+
         echo sprintf("\nLUNCH:\n");
         $this->doPrintMenu($dinerIterator);
+
+        echo sprintf("\nCAFE:\n");
+        $this->doPrintMenu($cafeIterator);
     }
 
     private function doPrintMenu(Iterator $iterator): void
