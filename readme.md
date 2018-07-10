@@ -89,9 +89,9 @@ php DinerMerger/client.php
 php DinerMergerI/client.php
 ```
 ### Composite pattern
-Il pattern Composite consente di comporre oggetti in strutture ad albero per rappresentare gerarchie intere. Il pattern Composite consente ai client di trattare in modo uniforme singoli oggetti e composizioni di oggetti. Usando una struttura composita, possiamo applicare le stesse operazioni sia sui dati compositi che su singoli oggetti. In altre parole, nella maggior parte dei casi possiamo ignorare le differenze tra le composizioni di oggetti e oggetti individuali.
+Il pattern Composite consente di comporre oggetti in strutture ad albero per rappresentare gerarchie intere. Il pattern Composite consente ai client di trattare in modo uniforme singoli oggetti e composizioni di oggetti. Usando una struttura composita, possiamo applicare le stesse operazioni sia sui dati compositi che su singoli oggetti. In altre parole, nella maggior parte dei casi possiamo ignorare le differenze tra le composizioni di oggetti e oggetti individuali. Con questo pattern sembra che il principio di singola responsabilità venga violato in quanto una classe che lo implementa si trova a fare due cose, gestire una gerarchia e gestire operazioni sui nodi finali (le foglie dell'albero). Possiamo tuttavia dire che il pattern Composite prende il design del SRP e lo scambia per _trasparenza_; consentendo all'interfaccia Component di contenere le operazioni di gestione figlio e le operazioni foglia, un client può trattare uniformemente sia i dati compositi che i nodi foglia; quindi, se un elemento è un nodo composito o foglia diventa trasparente per il client. consentendo all'interfaccia Component di contenere le operazioni di gestione figlio e le operazioni foglia, un client può trattare uniformemente sia i compositi che i nodi foglia; quindi, se un elemento è un nodo composito o foglia diventa trasparente per il client. Questo è un classico caso di compromesso. A volte facciamo intenzionalmente le cose in un modo che sembra violare il principio. In alcuni casi, tuttavia, questa è una questione di prospettiva; per esempio, potrebbe sembrare sbagliato avere operazioni di gestione figli nei nodi foglia (come _add()_, _remove()_ e _getChild()_), ma poi puoi sempre cambiare prospettiva e vedere una foglia come un nodo con zero figli.
 ```
-
+php Composite/Menu/client.php
 ```
 ## Extra
 
