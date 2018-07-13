@@ -47,5 +47,5 @@ abstract class MenuComponent
         throw new \LogicException();
     }
 
-    abstract public function createIterator(): \ArrayIterator;
+    abstract public function createIterator(): \CachingIterator;
 }

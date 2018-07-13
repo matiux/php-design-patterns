@@ -22,7 +22,7 @@ class Waitress
 
         echo sprintf("\nVEGETARIAN MENU\n----");
 
-        while ($iterator->valid()) {
+        while ($iterator->hasNext()) {
 
             /** @var MenuComponent $menuComponent */
             $menuComponent = $iterator->current();
@@ -34,9 +34,7 @@ class Waitress
 
                     $menuComponent->print();
                 }
-
             } catch (\LogicException $e) {
-
             }
         }
     }

@@ -2,25 +2,37 @@
 
 namespace DesignPatterns\CompositeIterator\Menu;
 
-class CompositeIterator extends \ArrayIterator
+class CompositeIterator extends \CachingIterator
 {
-//    private $stack;
-//
-//    public function __construct(\ArrayIterator $iterator)
-//    {
-//        $this->stack = $iterator;
-//    }
-//
-//    public function next(): MenuItem
-//    {
-//
-//    }
-//
-//    public function hasNext(): bool
-//    {
-//        if (0 == $this->stack->count()) {
-//            return false;
-//        }
-//
-//    }
+    public function next(): void
+    {
+        if ($this->hasNext()) {
+
+            $k = $this->getInnerIterator()->key();
+            $c = $this->count();
+
+            $next = $this->offsetGet("1");
+
+            $iterator = $this->current();
+            $this->next();
+            $iterator = $this->current();
+            prev($this->getInnerIterator());
+        }
+    }
+
+
+    public function hasNext(): bool
+    {
+        if (count($this)) {
+            return false;
+        }
+
+        parent::next();
+        $next = $this->getInnerIterator();
+
+        $next->next();
+
+        $c2 = $this->current();
+        $a = 1;
+    }
 }

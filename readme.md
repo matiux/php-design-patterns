@@ -93,6 +93,10 @@ Il pattern Composite consente di comporre oggetti in strutture ad albero per rap
 ```
 php Composite/Menu/client.php
 ```
+### Composite Iterator pattern
+```
+php CompositeIterator/Menu/client.php
+```
 ## Extra
 
 ### Hexagonal Architecture (Ports and Adapters)

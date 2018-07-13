@@ -139,4 +139,6 @@ $coffeeMenu->add(new MenuItem(
 
 $waitress = new Waitress($allMenus);
 
-$waitress->printMenu();
+//$waitress->printMenu();
+$waitress->printVegetarianMenu();
+echo sprintf("-----------------------------\n");

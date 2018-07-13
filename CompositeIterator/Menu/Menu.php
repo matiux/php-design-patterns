@@ -6,9 +6,10 @@ class Menu extends MenuComponent
 {
     private $menuComponents;
 
+    private $iterator;
+
     private $name;
     private $description;
-    private $iterator;
 
     public function __construct(string $name, string $description)
     {
@@ -38,11 +39,10 @@ class Menu extends MenuComponent
         return $this->description;
     }
 
-    public function createIterator(): \ArrayIterator
+    public function createIterator(): \CachingIterator
     {
         if (null === $this->iterator) {
-
-            $this->iterator = new CompositeIterator($this->menuComponents->getIterator());
+            $this->iterator = new CompositeIterator($this->menuComponents->getIterator(), \CachingIterator::FULL_CACHE);
         }
 
         return $this->iterator;
