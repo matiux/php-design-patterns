@@ -34,6 +34,7 @@ class Waitress
 
                     $menuComponent->print();
                 }
+
             } catch (\LogicException $e) {
             }
         }

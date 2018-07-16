@@ -5,7 +5,6 @@ namespace DesignPatterns\CompositeIterator\Menu;
 class Menu extends MenuComponent
 {
     private $menuComponents;
-
     private $iterator;
 
     private $name;
@@ -39,10 +38,11 @@ class Menu extends MenuComponent
         return $this->description;
     }
 
-    public function createIterator(): \CachingIterator
+    public function createIterator(): CompositeIterator
     {
         if (null === $this->iterator) {
-            $this->iterator = new CompositeIterator($this->menuComponents->getIterator(), \CachingIterator::FULL_CACHE);
+            $this->iterator = new CompositeIterator($this->menuComponents->getIterator());
+            //$this->iterator = new \ArrayIterator($this->menuComponents);
         }
 
         return $this->iterator;

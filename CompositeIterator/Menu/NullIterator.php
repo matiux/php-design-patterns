@@ -2,15 +2,10 @@
 
 namespace DesignPatterns\CompositeIterator\Menu;
 
-class NullIterator extends \CachingIterator
+class NullIterator extends CompositeIterator
 {
-//    public function hasNext(): bool
-//    {
-//        return false;
-//    }
-//
-//    public function next(): MenuItem
-//    {
-//        return null;
-//    }
+    public function hasNext(): bool
+    {
+        return false;
+    }
 }

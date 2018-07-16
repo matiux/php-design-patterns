@@ -49,11 +49,11 @@ class MenuItem extends MenuComponent
         echo sprintf("    --  %s\n", $this->description);
     }
 
-    public function createIterator(): \CachingIterator
+    public function createIterator(): CompositeIterator
     {
         /**
          * Null object pattern
          */
-        return new NullIterator(null);
+        return new NullIterator((new \ArrayObject())->getIterator());
     }
 }
