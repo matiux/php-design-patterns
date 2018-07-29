@@ -20,13 +20,12 @@ class Waitress
     {
         $iterator = $this->allMenus->createIterator();
 
-        echo sprintf("\nVEGETARIAN MENU\n----");
+        echo sprintf("\nVEGETARIAN MENU\n----\n");
 
         while ($iterator->hasNext()) {
 
             /** @var MenuComponent $menuComponent */
-            $menuComponent = $iterator->current();
-            $iterator->next();
+            $menuComponent = $iterator->next();
 
             try {
 

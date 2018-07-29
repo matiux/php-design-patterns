@@ -42,7 +42,6 @@ class Menu extends MenuComponent
     {
         if (null === $this->iterator) {
             $this->iterator = new CompositeIterator($this->menuComponents->getIterator());
-            //$this->iterator = new \ArrayIterator($this->menuComponents);
         }
 
         return $this->iterator;

@@ -2,11 +2,9 @@
 
 namespace DesignPatterns\CompositeIterator\Menu;
 
-use Iterator as SplIterator;
-
-interface Iterator extends SplIterator
+interface Iterator
 {
     public function hasNext(): bool;
 
-    public function fetchNext(): ?MenuComponent;
+    public function next(): ?MenuComponent;
 }

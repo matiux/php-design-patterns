@@ -2,131 +2,74 @@
 
 namespace DesignPatterns\CompositeIterator\Menu;
 
+use Iterator;
+
 class CompositeIterator implements Iterator
 {
-    private $arrayIterator;
+    private $iterator;
     private $position = 0;
 
-    public function __construct(\ArrayIterator $arrayIterator)
+    public function __construct(Iterator $iterator)
     {
-        $this->arrayIterator = $arrayIterator;
+        $this->iterator = $iterator;
     }
 
-//    public function next(): void
+//    public function next(): ?MenuComponent
 //    {
-//        $this->arrayIterator->next();
-//////        $this->arrayIterator->next();
-////        if ($this->hasNext()) {
-////            $component = $this->arrayIterator->current();
-////
-////            $this->arrayIterator->append($component);
-////            return $component;
-////        }
-////
-////            //$this->internalIterator->next();
-////            $this->currentIterator = $this->arrayIterator->current()->createIterator();
-//////
-//////            $i = $this->current()->createIterator();
-//////            $this->current = $i->current();
-//////
-//////            return $current;
-////        }
-//////
-//////        return null;
+//        if ($this->hasNext()) {
+//
+//            $iterator = $this->stack[0];
+//
+//            $component = $iterator->next();
+//
+//
+//            array_unshift($this->stack, $component->createIterator());
+//
+//
+//            return $component;
+//        } else {
+//
+//            return null;
+//        }
 //    }
 //
 //    public function hasNext(): bool
 //    {
-//        if (!$this->valid() || !$this->arrayIterator->count()) {
+//        $c = count($this->stack);
+//
+//        if (!$this->stack) {
+//
 //            return false;
-//        }
-//
-//        $current = $this->arrayIterator->current();
-//
-//        if ($current->createIterator()->valid()) {
-//
-//            $this->tmpIterator = $current->createIterator();
-//            return true;
 //
 //        } else {
 //
-//            $this->tmpIterator = null;
-//            return false;
+//            $iterator = $this->stack[0];
+//
+//            if (!$iterator->hasNext()) {
+//
+//                array_shift($this->stack);
+//
+//                return $this->hasNext();
+//
+//            } else {
+//
+//                return true;
+//            }
 //        }
-//
-//
-////        if (!$currentInnerIterator->hasNext()) {
-////
-////            $this->arrayIterator->offsetUnset('0');
-////            return $this->hasNext();
-////
-////        } else {
-////            return true;
-////        }
-//
-//        return $this->tmpIterator->valid();
-//
-////        $current = $innerIterator->current();
-//
-////        if (!$innerIterator->hasNext()) {
-////
-////            $this->next();
-////            return $this->hasNext();
-////
-////        } else {
-////
-////            return true;
-////        }
-//    }
-//
-//    public function current(): ?MenuComponent
-//    {
-////        if ($this->hasNext()) {
-////
-////        }
-//
-//        $item = $this->arrayIterator->current();
-//
-//        return $item;
-////        $item = $this->arrayIterator->current();
-////
-////        return $item;
-//    }
-//
-//    public function key()
-//    {
-//        $key = $this->arrayIterator->key();
-//
-//        return $key;
-//    }
-//
-//    public function valid(): bool
-//    {
-//        $valid = $this->arrayIterator->valid();
-//
-//        return $valid;
-//    }
-//
-//    public function rewind()
-//    {
-//        $this->arrayIterator->rewind();
-//    }
-//
-//    public function fetchNext(): ?MenuComponent
-//    {
-//        if ($this->hasNext()) {
-//
-//            $i = $this->current()->createIterator();
-//            $current = $i->current();
-//
-//            return $current;
-//        }
-//
-//        return null;
-//    }
+
     public function current()
     {
+        /** @var MenuComponent $current */
+        $current = $this->iterator->current();
 
+        $e = $current->createIterator();
+
+//        if ($current instanceof MenuIterator) {
+//            return $current;
+//        } else if ($current instanceof Menu) {
+//
+//            $node = $current->get
+//        }
     }
 
     public function next()
@@ -136,32 +79,16 @@ class CompositeIterator implements Iterator
 
     public function key()
     {
-
+        return $this->position;
     }
 
-    public function valid()
+    public function valid(): bool
     {
-
+        return isset($this->iterator[$this->position]);
     }
 
-    public function rewind()
+    public function rewind(): void
     {
-
-    }
-
-    public function hasNext(): bool
-    {
-        if ($this->position >= $this->arrayIterator->count() || !$this->arrayIterator->offsetGet($this->position)) {
-            return false;
-        } else {
-            return true;
-        }
-    }
-
-    public function fetchNext(): ?MenuComponent
-    {
-        $component = $this->arrayIterator->offsetGet($this->position);
-        $this->position++;
-        return $component;
+        $this->position = 0;
     }
 }

@@ -54,6 +54,8 @@ class MenuItem extends MenuComponent
         /**
          * Null object pattern
          */
-        return new NullIterator((new \ArrayObject())->getIterator());
+
+        return new NullIterator(new MenuIterator((new \ArrayObject())->getIterator()));
+
     }
 }
