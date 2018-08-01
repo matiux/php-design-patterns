@@ -6,89 +6,93 @@ use Iterator;
 
 class CompositeIterator implements Iterator
 {
-    private $iterator;
-    private $position = 0;
+    private $items;
 
-    public function __construct(Iterator $iterator)
+    public function __construct(\ArrayObject $items)
     {
-        $this->iterator = $iterator;
+        $this->items = $items;
     }
 
-//    public function next(): ?MenuComponent
-//    {
-//        if ($this->hasNext()) {
-//
-//            $iterator = $this->stack[0];
-//
-//            $component = $iterator->next();
-//
-//
-//            array_unshift($this->stack, $component->createIterator());
-//
-//
-//            return $component;
-//        } else {
-//
-//            return null;
-//        }
-//    }
-//
-//    public function hasNext(): bool
-//    {
-//        $c = count($this->stack);
-//
-//        if (!$this->stack) {
-//
-//            return false;
-//
-//        } else {
-//
-//            $iterator = $this->stack[0];
-//
-//            if (!$iterator->hasNext()) {
-//
-//                array_shift($this->stack);
-//
-//                return $this->hasNext();
-//
-//            } else {
-//
-//                return true;
-//            }
-//        }
-
-    public function current()
+    public function current(): ?MenuComponent
     {
-        /** @var MenuComponent $current */
-        $current = $this->iterator->current();
-
-        $e = $current->createIterator();
-
-//        if ($current instanceof MenuIterator) {
-//            return $current;
-//        } else if ($current instanceof Menu) {
+//        $this->current = clone $this->iterator->current();
+//        $this->node = clone $this->iterator;
 //
-//            $node = $current->get
+//        if ($this->current instanceof Menu) {
+//
+//            $this->node = clone $this->current->createIterator();
+//            $c = $this->node->current();
+//            $this->current = clone $this->node->current();
+//
+//            return $this->current;
+//
+//        } else if ($this->current instanceof MenuItem) {
+//
+//            return $this->current;
 //        }
+
+        $current = $this->items->current();
+
+        if ($current instanceof Menu) {
+
+            $i = $current->createIterator();
+            $this->items = $i;
+            $current = $i->current();
+        }
+
+        return $current;
     }
 
     public function next()
     {
+        $this->items->next();
 
+        if (!$this->items->valid()) {
+            $this->items = $this->originalIterator;
+            $this->items->next();
+        }
+
+//        $c = $this->node->current();
+//
+//        $this->node->next();
+//
+//        $c = $this->node->current();
+//
+//        if (!$this->node->valid()) {
+//
+//            $ci = $this->iterator->current();
+//
+//            $this->iterator->next();
+//
+//            $ci = $this->iterator->current();
+//
+//            if ($this->iterator->valid()) {
+//                $this->node = $this->iterator;
+//            }
+//        }
     }
 
     public function key()
     {
-        return $this->position;
+        $a = 1;
     }
 
     public function valid(): bool
     {
-        return isset($this->iterator[$this->position]);
+        $current = current($this->items);
+
+        if ($current instanceof Menu) {
+            $i = $current->createIterator();
+            $current = current($i);
+        }
+
+        $valid = $current ? true : false;
+
+        return $valid;
     }
 
     public function rewind(): void
     {
-        $this->position = 0;
+        reset($this->items);
     }
 }

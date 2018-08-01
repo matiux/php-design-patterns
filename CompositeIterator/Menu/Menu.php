@@ -41,7 +41,7 @@ class Menu extends MenuComponent
     public function createIterator(): CompositeIterator
     {
         if (null === $this->iterator) {
-            $this->iterator = new CompositeIterator($this->menuComponents->getIterator());
+            $this->iterator = new CompositeIterator($this->menuComponents);
         }
 
         return $this->iterator;
