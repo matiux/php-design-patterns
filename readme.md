@@ -5,9 +5,10 @@ Based on the book "Head First Design Patterns"
 ## Getting Started
 ### Run Docker container
 ```
-./dc build
+git clone git@github.com:matiux/php-design-patterns.git && cd php-design-patterns
 ./dc up -d
-./dc exec --user utente php bash
+./dc enter
+composer install
 ```
 
 #### Database MySql
