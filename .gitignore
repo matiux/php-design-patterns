@@ -2,3 +2,7 @@
 vendor
 docker/data/composer/cache/*
 !docker/data/composer/cache/.gitkeep
+
+###> Docker ###
+docker/docker-compose.override.yml
+###< Docker ###

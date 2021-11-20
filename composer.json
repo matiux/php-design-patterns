@@ -1,5 +1,5 @@
 {
-  "name": "matiux/design_patterns",
+  "name": "matiux/php-design-patterns",
   "license": "",
   "autoload": {
     "psr-4": {
@@ -7,7 +7,7 @@
     }
   },
   "require": {
-    "php": "^7.2",
+    "php": "^7.4",
     "doctrine/dbal": "^2.7",
     "ramsey/uuid": "^3.7",
     "symfony/console": "^4.1",
