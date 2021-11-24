@@ -4,7 +4,7 @@ namespace DesignPatterns\State\GumballState;
 
 class HasQuarterState implements State
 {
-    private $gumballMachine;
+    private GumballMachine  $gumballMachine;
 
     public function __construct(GumballMachine $gumballMachine)
     {
@@ -13,26 +13,26 @@ class HasQuarterState implements State
 
     public function insertQuarter(): void
     {
-        echo sprintf("\tYou can't insert another quarter\n");
+        echo "\tYou can't insert another quarter\n";
     }
 
     public function ejectQuarter(): void
     {
-        echo sprintf("\tQuarter returned\n");
+        echo "\tQuarter returned\n";
 
         $this->gumballMachine->setState($this->gumballMachine->getNoQuarterState());
     }
 
     public function turnCrank(): void
     {
-        echo sprintf("\tYou turned...\n");
+        echo "\tYou turned...\n";
 
         $this->gumballMachine->setState($this->gumballMachine->getSoldState());
     }
 
     public function dispense(): void
     {
-        echo sprintf("\tNo gumball dispensed\n");
+        echo "\tNo gumball dispensed\n";
     }
 
     public function refill(): void
@@ -42,6 +42,6 @@ class HasQuarterState implements State
 
     public function __toString()
     {
-        return sprintf("Waiting for turn of crank\"\n");
+        return "Waiting for turn of crank\"\n";
     }
 }

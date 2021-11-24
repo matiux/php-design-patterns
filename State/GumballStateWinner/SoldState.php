@@ -4,7 +4,7 @@ namespace DesignPatterns\State\GumballStateWinner;
 
 class SoldState implements State
 {
-    private $gumballMachine;
+    private GumballMachine $gumballMachine;
 
     public function __construct(GumballMachine $gumballMachine)
     {
@@ -13,17 +13,17 @@ class SoldState implements State
 
     public function insertQuarter(): void
     {
-        echo sprintf("\tPlease wait, we're already giving you a gumball\n");
+        echo "\tPlease wait, we're already giving you a gumball\n";
     }
 
     public function ejectQuarter(): void
     {
-        echo sprintf("\tSorry, you already turned the crank\n");
+        echo "\tSorry, you already turned the crank\n";
     }
 
     public function turnCrank(): void
     {
-        echo sprintf("\tTurning twice doesn't get you another gumball!\n");
+        echo "\tTurning twice doesn't get you another gumball!\n";
     }
 
     public function dispense(): void
@@ -36,7 +36,7 @@ class SoldState implements State
 
         } else {
 
-            echo sprintf("\tOops, out of gumballs!\n");
+            echo "\tOops, out of gumballs!\n";
 
             $this->gumballMachine->setState($this->gumballMachine->getSoldOutState());
         }
@@ -49,6 +49,6 @@ class SoldState implements State
 
     public function __toString()
     {
-        return sprintf("Dispensing a gumball\n");
+        return "Dispensing a gumball\n";
     }
 }

@@ -10,12 +10,13 @@ echo '\\---------------------------------\\';
 echo $gumballMachine;
 echo '\\---------------------------------\\' . "\n";
 
+echo "\n        \\ 1 ------------------------\\\n";
 $gumballMachine->insertQuarter();
 $gumballMachine->turnCrank();
-
-
+echo "\n        \\ 2 ------------------------\\\n";
 $gumballMachine->insertQuarter();
 $gumballMachine->turnCrank();
+echo "\n        \\ 3 ------------------------\\\n";
 $gumballMachine->insertQuarter();
 $gumballMachine->turnCrank();
 

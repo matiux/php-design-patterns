@@ -4,7 +4,7 @@ namespace DesignPatterns\State\GumballState;
 
 class SoldOutState implements State
 {
-    private $gumballMachine;
+    private GumballMachine $gumballMachine;
 
     public function __construct(GumballMachine $gumballMachine)
     {
@@ -13,31 +13,31 @@ class SoldOutState implements State
 
     public function insertQuarter(): void
     {
-        echo sprintf("\tYou can't insert a quarter, the machine is sold out\n");
+        echo "\tYou can't insert a quarter, the machine is sold out\n";
     }
 
     public function ejectQuarter(): void
     {
-        echo sprintf("\tYou can't eject, you haven't inserted a quarter yet\n");
+        echo "\tYou can't eject, you haven't inserted a quarter yet\n";
     }
 
     public function turnCrank(): void
     {
-        echo sprintf("\tYou turned, but there are no gumballs\n");
+        echo "\tYou turned, but there are no gumballs\n";
     }
 
     public function dispense(): void
     {
-        echo sprintf("\tNo gumball dispensed\n");
+        echo "\tNo gumball dispensed\n";
     }
 
     public function refill(): void
     {
-
+        $this->gumballMachine->setState($this->gumballMachine->getNoQuarterState());
     }
 
     public function __toString()
     {
-        return sprintf("Sold out\n");
+        return "Sold out\n";
     }
 }

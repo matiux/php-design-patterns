@@ -4,15 +4,14 @@ namespace DesignPatterns\State\GumballState;
 
 class GumballMachine
 {
-    private $soldOutState;
-    private $noQuarterState;
-    private $hasQuarterState;
-    private $soldState;
+    private SoldOutState $soldOutState;
+    private NoQuarterState $noQuarterState;
+    private HasQuarterState $hasQuarterState;
+    private SoldState $soldState;
 
-    /** @var State */
-    private $state;
+    private State $state;
 
-    private $count = 0;
+    private int $count;
 
     public function __construct(int $numberGumballs)
     {
@@ -48,7 +47,7 @@ class GumballMachine
 
     public function releaseBall(): void
     {
-        echo sprintf("\tA gumball comes rolling out the slot...\n");
+        echo "\tA gumball comes rolling out the slot...\n";
 
         if ($this->count != 0) {
             $this->count = $this->count - 1;
@@ -62,6 +61,9 @@ class GumballMachine
 
     public function refill(int $count): void
     {
+        if (0 == $count) {
+            echo "\n\nInvalid refill";
+        }
         $this->count += $count;
         echo sprintf("\n\nThe gumball machine was just refilled; it's new count is: %d\n\n", $this->count);
 
@@ -108,8 +110,7 @@ class GumballMachine
             $result .= "s";
         }
 
-        $result .= "\n";
-        $result .= "Machine is: {$this->state}\n";
+        $result .= "\nMachine is: $this->state\n";
 
         return $result;
     }
