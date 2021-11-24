@@ -4,7 +4,7 @@ namespace DesignPatterns\State\GumballStateWinner;
 
 class WinnerState implements State
 {
-    private $gumballMachine;
+    private GumballMachine $gumballMachine;
 
     public function __construct(GumballMachine $gumballMachine)
     {
@@ -13,19 +13,19 @@ class WinnerState implements State
 
     public function insertQuarter(): void
     {
-        echo sprintf("\tPlease wait, we're already giving you a Gumball\n");
+        echo "\tPlease wait, we're already giving you a Gumball\n";
     }
 
     public function ejectQuarter(): void
     {
-        echo sprintf("\tPlease wait, we're already giving you a Gumball\n");
+        echo "\tPlease wait, we're already giving you a Gumball\n";
 
         $this->gumballMachine->setState($this->gumballMachine->getNoQuarterState());
     }
 
     public function turnCrank(): void
     {
-        echo sprintf("\tTurning again doesn't get you another gumball!\n");
+        echo "\tTurning again doesn't get you another gumball!\n";
     }
 
     public function dispense(): void
@@ -40,7 +40,7 @@ class WinnerState implements State
 
             $this->gumballMachine->releaseBall();
 
-            echo sprintf("\tYOU'RE A WINNER! You got two gumballs for your quarter\n");
+            echo "\tYOU'RE A WINNER! You got two gumballs for your quarter\n";
 
             if ($this->gumballMachine->getCount() > 0) {
 
@@ -48,7 +48,7 @@ class WinnerState implements State
 
             } else {
 
-                echo sprintf("\tOops, out of gumballs!\n");
+                echo "\tOops, out of gumballs!\n";
 
                 $this->gumballMachine->setState($this->gumballMachine->getSoldOutState());
             }
@@ -62,6 +62,6 @@ class WinnerState implements State
 
     public function __toString()
     {
-        return sprintf("Despensing two gumballs for your quarter, because YOU'RE A WINNER!\n");
+        return "Dispensing two gumballs for your quarter, because YOU'RE A WINNER!\n";
     }
 }

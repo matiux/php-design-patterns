@@ -1,0 +1,52 @@
+version: '3.8'
+
+volumes:
+  app_database: {}
+
+networks:
+  php_design_pattern_nettwork:
+    name: php_design_pattern_nettwork
+    driver: bridge
+
+services:
+  php_design_pattern:
+    build: php
+    hostname: phpdphost
+    volumes:
+      - ../:/var/www/app:delegated
+      - ./data/shell_history:/home/utente/shell_history
+    environment:
+      - HISTFILE=/home/utente/shell_history/.x_history
+    networks:
+      - php_design_pattern_nettwork
+    secrets:
+      - source: id_rsa
+        target: /home/utente/.ssh/id_rsa
+      - source: id_rsa.pub
+        target: /home/utente/.ssh/id_rsa.pub
+      - source: known_hosts
+        target: /home/utente/.ssh/known_hosts
+
+  phpmyadmin:
+    image: phpmyadmin/phpmyadmin
+    ports:
+    - "8081:80"
+    depends_on:
+    - servicedb
+    environment:
+    - PMA_HOST=servicedb
+    networks:
+      - php_design_pattern_nettwork
+
+  servicedb:
+    image: mysql:5.7
+    volumes:
+      - app_database:/var/lib/mysql
+    command: mysqld --sql_mode=""
+    environment:
+      - MYSQL_ROOT_PASSWORD=rootpassword
+      - MYSQL_USER=user
+      - MYSQL_PASSWORD=password
+      - MYSQL_DATABASE=idy
+    networks:
+      - php_design_pattern_nettwork

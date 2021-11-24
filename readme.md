@@ -65,24 +65,35 @@ php Command/Undo/Client.php
 php Command/Macro/Client.php
 ```
 ### Adapter pattern
-Il pattern Adapter converte l'interfaccia di una classe in un'altra che il client si aspetta. L'Adapter consente alle classi di lavorare insieme quando non potrebbero a causa di interfacce incompatibili.
+Il pattern Adapter converte l'interfaccia di una classe in un'altra che il client si aspetta. L'Adapter consente alle classi di lavorare
+insieme quando non potrebbero a causa di interfacce incompatibili.
 ```
 php Adapter/Anatre/ClientAnatra.php 
 php Adapter/Anatre/ClientTacchino.php 
 ```
 ### Facade pattern
-il pattern Facade fornisce un'interfaccia unificata a un insieme di interfacce in un sottosistema. Definisce un'interfaccia di livello superiore che semplifica l'utilizzo del sottosistema. La differenza tra Facade e Adapter è nel loro intento. L'intento del pattern Adapter è di modificare un'interfaccia in modo che corrisponda a quella che un client si aspetta. L'intento del pattern Facade è di fornire un'interfaccia semplificata a un sottosistema.
+il pattern Facade fornisce un'interfaccia unificata a un insieme di interfacce in un sottosistema. Definisce un'interfaccia di livello superiore che
+semplifica l'utilizzo del sottosistema. La differenza tra Facade e Adapter è nel loro intento. L'intento del pattern Adapter è di modificare
+un'interfaccia in modo che corrisponda a quella che un client si aspetta. L'intento del pattern Facade è di fornire un'interfaccia semplificata a
+un sottosistema.
 ```
 php Facade/Client.php
 ```
 ### Template method pattern
-Il pattern Template Method definisce lo scheletro di un algoritmo in un metodo, delegando alcuni passaggi alle sottoclassi. Il pattern Template Method consente alle sottoclassi diridefinire determinati passaggi di un algoritmo senza modificarne la struttura.  
+Il pattern Template Method definisce lo scheletro di un algoritmo in un metodo, delegando alcuni passaggi alle sottoclassi. Il pattern Template Method
+consente alle sottoclassi diridefinire determinati passaggi di un algoritmo senza modificarne la struttura.  
 ```
 php TemplateMethod/NoHook/Client.php
 php TemplateMethod/Hook/Client.php
 ```
 ### Iterator pattern
-Il pattern Iterator fornisce un modo per accedere sequenzialmente agli elementi di un oggetto aggregato senza esporre la sua rappresentazione sottostante. Ma l'effetto dell'utilizzo degli iteratori nel tuo progetto è altrettanto importante: una volta che hai un modo uniforme di accedere agli elementi di tutti i tuoi oggetti aggregati, puoi scrivere codice polimorfico che funzioni con uno qualsiasi di questi aggregati, potendo usare indiscriminatamente array, ArrayObject, collezioni di dominio ecc, a condizione che riesca a impossessarsi di un Iterator. Un altra cosa importante è che il pattern Iterator assume la responsabilità di attraversare gli elementi e attribuisce tale responsabilità all'oggetto iteratore, non all'oggetto aggregato. Ciò non solo mantiene più semplice l'interfaccia aggregata e l'implementazione, ma rimuove la responsabilità dell'iterazione dall'aggregazione e mantiene l'aggregato focalizzato sulle cose su cui dovrebbe essere focalizzato (gestendo una collezione di oggetti), non sull'iterazione.
+Il pattern Iterator fornisce un modo per accedere sequenzialmente agli elementi di un oggetto aggregato senza esporre la sua rappresentazione
+sottostante. Ma l'effetto dell'utilizzo degli iteratori nel tuo progetto è altrettanto importante: una volta che hai un modo uniforme di accedere
+agli elementi di tutti i tuoi oggetti aggregati, puoi scrivere codice polimorfico che funzioni con uno qualsiasi di questi aggregati, potendo
+usare indiscriminatamente array, ArrayObject, collezioni di dominio ecc, a condizione che riesca a impossessarsi di un Iterator. Un altra cosa
+importante è che il pattern Iterator assume la responsabilità di attraversare gli elementi e attribuisce tale responsabilità all'oggetto iteratore,
+non all'oggetto aggregato. Ciò non solo mantiene più semplice l'interfaccia aggregata e l'implementazione, ma rimuove la responsabilità dell'iterazione
+dall'aggregazione e mantiene l'aggregato focalizzato sulle cose su cui dovrebbe essere focalizzato (gestendo una collezione di oggetti), non sull'iterazione.
 ```
 php DinerMerger/client.php
 
@@ -90,16 +101,46 @@ php DinerMerger/client.php
 php DinerMergerI/client.php
 ```
 ### Composite pattern
-Il pattern Composite consente di comporre oggetti in strutture ad albero per rappresentare gerarchie intere. Il pattern Composite consente ai client di trattare in modo uniforme singoli oggetti e composizioni di oggetti. Usando una struttura composita, possiamo applicare le stesse operazioni sia sui dati compositi che su singoli oggetti. In altre parole, nella maggior parte dei casi possiamo ignorare le differenze tra le composizioni di oggetti e oggetti individuali. Con questo pattern sembra che il principio di singola responsabilità venga violato in quanto una classe che lo implementa si trova a fare due cose, gestire una gerarchia e gestire operazioni sui nodi finali (le foglie dell'albero). Possiamo tuttavia dire che il pattern Composite prende il design del SRP e lo scambia per _trasparenza_; consentendo all'interfaccia Component di contenere le operazioni di gestione figlio e le operazioni foglia, un client può trattare uniformemente sia i dati compositi che i nodi foglia; quindi, se un elemento è un nodo composito o foglia diventa trasparente per il client. consentendo all'interfaccia Component di contenere le operazioni di gestione figlio e le operazioni foglia, un client può trattare uniformemente sia i compositi che i nodi foglia; quindi, se un elemento è un nodo composito o foglia diventa trasparente per il client. Questo è un classico caso di compromesso. A volte facciamo intenzionalmente le cose in un modo che sembra violare il principio. In alcuni casi, tuttavia, questa è una questione di prospettiva; per esempio, potrebbe sembrare sbagliato avere operazioni di gestione figli nei nodi foglia (come _add()_, _remove()_ e _getChild()_), ma poi puoi sempre cambiare prospettiva e vedere una foglia come un nodo con zero figli.
+Il pattern Composite consente di comporre oggetti in strutture ad albero per rappresentare gerarchie intere. Il pattern Composite consente ai
+client di trattare in modo uniforme singoli oggetti e composizioni di oggetti. Usando una struttura composita, possiamo applicare le stesse
+operazioni sia sui dati compositi che su singoli oggetti. In altre parole, nella maggior parte dei casi possiamo ignorare le differenze tra
+le composizioni di oggetti e oggetti individuali. Con questo pattern sembra che il principio di singola responsabilità venga violato in quanto
+una classe che lo implementa si trova a fare due cose, gestire una gerarchia e gestire operazioni sui nodi finali (le foglie dell'albero).
+Possiamo tuttavia dire che il pattern Composite prende il design del SRP e lo scambia per _trasparenza_; consentendo all'interfaccia Component di
+contenere le operazioni di gestione figlio e le operazioni foglia, un client può trattare uniformemente sia i dati compositi che i nodi foglia;
+quindi, se un elemento è un nodo composito o foglia diventa trasparente per il client. consentendo all'interfaccia Component di contenere le
+operazioni di gestione figlio e le operazioni foglia, un client può trattare uniformemente sia i compositi che i nodi foglia; quindi, se un elemento
+è un nodo composito o foglia diventa trasparente per il client. Questo è un classico caso di compromesso. A volte facciamo intenzionalmente le cose
+in un modo che sembra violare il principio. In alcuni casi, tuttavia, questa è una questione di prospettiva; per esempio, potrebbe sembrare sbagliato
+avere operazioni di gestione figli nei nodi foglia (come _add()_, _remove()_ e _getChild()_), ma poi puoi sempre cambiare prospettiva e vedere una
+foglia come un nodo con zero figli.
 ```
 php Composite/Menu/client.php
 ```
 
 ### State pattern
-Il pattern State consente a un oggetto di alterarne il comportamento quando cambia lo stato interno. L'oggetto sembrerà cambiare la sua classe. Poiché il pattern incapsula lo stato in classi separate e delega all'oggetto che rappresenta lo stato corrente, sappiamo che il comportamento cambia insieme allo stato interno. Con il pattern State, abbiamo un insieme di comportamenti incapsulati in oggetti di stato; in qualsiasi momento il contesto sta delegando a uno di questi stati. Nel tempo, lo stato corrente cambia attraverso l'insieme di oggetti di stato per riflettere lo stato interno del contesto, quindi anche il comportamento del contesto cambia nel tempo. A livello di diagramma questo pattern è identico al Pattern Strategy. In generale, pensa allo Strategy come un'alternativa flessibile alla sottoclasse; se usi l'ereditarietà per definire il comportamento di una classe, allora sei bloccato con quel comportamento anche se hai bisogno di cambiarlo. Con lo Strategy puoi cambiare il comportamento componendo con un oggetto diverso. Il pattern State invece va pensato come alternativa al mettere molte condizionali nel tuo contesto; incapsulando i comportamenti all'interno degli oggetti di stato, puoi semplicemente cambiare l'oggetto stato nel contesto per cambiarne il comportamento.
+Il pattern State consente a un oggetto di alterarne il comportamento quando cambia lo stato interno. L'oggetto sembrerà cambiare la sua classe.
+Poiché il pattern incapsula lo stato in classi separate e delega all'oggetto che rappresenta lo stato corrente, sappiamo che il comportamento
+cambia insieme allo stato interno. Con il pattern State, abbiamo un insieme di comportamenti incapsulati in oggetti di stato; in qualsiasi momento
+il contesto sta delegando a uno di questi stati. Nel tempo, lo stato corrente cambia attraverso l'insieme di oggetti di stato per riflettere lo
+stato interno del contesto, quindi anche il comportamento del contesto cambia nel tempo. A livello di diagramma questo pattern è identico al
+Pattern Strategy. In generale, pensa allo Strategy come un'alternativa flessibile alla sottoclasse; se usi l'ereditarietà per definire il comportamento
+di una classe, allora sei bloccato con quel comportamento anche se hai bisogno di cambiarlo. Con lo Strategy puoi cambiare il comportamento componendo
+con un oggetto diverso. Il pattern State invece va pensato come alternativa al mettere molte condizionali nel tuo contesto; incapsulando i comportamenti
+all'interno degli oggetti di stato, puoi semplicemente cambiare l'oggetto stato nel contesto per cambiarne il comportamento.
 ```
 php State/GumballState/client.php
 php State/GumballStateWinner/client.php
+```
+
+### Visitor pattern
+Il visitor è un pattern comportamentale che consente di separare gli algoritmi dagli oggetti su cui operano.
+Questo pattern rappresenta una operazione che si vuole eseguire su una collezione di elementi di una struttura. L'operazione può essere 
+modificata senza modificare le classi degli elementi sui quali opera. Si pensi a una struttura che contiene un insieme eterogeneo di oggetti,
+sui quali bisogna applicare la stessa operazione, che però è implementata in modo diverso per ogni classe di oggetto.
+
+```
+php Visitor/client.php
 ```
 
 ## Extra
