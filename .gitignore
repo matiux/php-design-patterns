@@ -2,6 +2,7 @@
 vendor
 docker/data/composer/cache/*
 !docker/data/composer/cache/.gitkeep
+tools/phpunit/.phpunit.result.cache
 
 ###> Docker ###
 docker/docker-compose.override.yml

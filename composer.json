@@ -3,7 +3,7 @@
   "license": "",
   "autoload": {
     "psr-4": {
-      "DesignPatterns\\": "./"
+      "DesignPatterns\\": "src/"
     }
   },
   "require": {
@@ -11,8 +11,15 @@
     "ext-intl": "*",
     "doctrine/dbal": "^2.7",
     "ramsey/uuid": "^3.7",
-    "symfony/console": "^4.1",
-    "phpunit/phpunit": "^7.2",
-    "mockery/mockery": "^1.1"
+    "symfony/console": "^5.0",
+    "phpunit/phpunit": "^9.5",
+    "mockery/mockery": "^1.5"
+  },
+  "config": {
+    "optimize-autoloader": true,
+    "sort-packages": true
+  },
+  "require-dev": {
+    "friendsofphp/php-cs-fixer": "^3.9"
   }
 }
