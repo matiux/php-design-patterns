@@ -4,20 +4,25 @@ declare(strict_types=1);
 
 namespace DesignPatterns\Factory\FactoryMethod\PizzaStore\Pizza;
 
+use ArrayObject;
+
+/**
+ * @psalm-suppress PropertyNotSetInConstructor
+ */
 abstract class Pizza
 {
-    protected $name;
-    protected $dough; // Impasto
-    protected $veggies;
-    protected $cheese;
-    protected $sauce;
-    protected $eggplant;
-
-    protected $pizzaIngredientFactory;
+    protected string $name;
+    protected string $dough; // Impasto
+    /** @var ArrayObject<int, string> */
+    protected ArrayObject $veggies;
+    protected string $cheese;
+    protected string $sauce;
+    protected string $eggplant;
 
     public function __construct()
     {
-        $this->veggies = new \ArrayObject();
+        /** @var ArrayObject<int, string> */
+        $this->veggies = new ArrayObject();
     }
 
     public function prepare(): void
@@ -26,8 +31,9 @@ abstract class Pizza
         echo "Stendo l'impasto {$this->dough}\n";
         echo "Aggiungo la salsa {$this->sauce}\n";
         echo "Aggiungo le verdure:\n";
-        foreach ($this->veggies as $veggy) {
-            echo "\t{$veggy}\n";
+
+        foreach ($this->veggies as $veggie) {
+            echo "\t{$veggie}\n";
         }
     }
 

@@ -4,12 +4,20 @@ declare(strict_types=1);
 
 namespace DesignPatterns\Iterator\DinerMerger;
 
+use ArrayObject;
+
 class PancakeHouseMenuIterator implements Iterator
 {
-    private $menuItems;
-    private $position = 0;
+    /**
+     * @var ArrayObject<int, MenuItem>
+     */
+    private ArrayObject $menuItems;
+    private int $position = 0;
 
-    public function __construct(\ArrayObject $menuItems)
+    /**
+     * @param ArrayObject<int, MenuItem> $menuItems
+     */
+    public function __construct(ArrayObject $menuItems)
     {
         $this->menuItems = $menuItems;
     }

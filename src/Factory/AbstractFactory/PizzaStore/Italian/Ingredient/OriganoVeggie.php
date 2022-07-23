@@ -8,7 +8,7 @@ use DesignPatterns\Factory\AbstractFactory\PizzaStore\Ingredient\Veggie;
 
 class OriganoVeggie extends Veggie
 {
-    public function getName()
+    public function getName(): string
     {
         return 'Origano bio';
     }

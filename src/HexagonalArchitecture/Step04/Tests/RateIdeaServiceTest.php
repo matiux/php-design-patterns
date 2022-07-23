@@ -19,7 +19,7 @@ class RateIdeaServiceTest extends TestCase
     /**
      * @test
      */
-    public function when_idea_does_not_exist_an_exception_should_be_thrown_v1()
+    public function when_idea_does_not_exist_an_exception_should_be_thrown_v1(): void
     {
         self::expectException(IdeaNotFoundException::class);
 
@@ -41,7 +41,7 @@ class RateIdeaServiceTest extends TestCase
     /**
      * @test
      */
-    public function when_idea_does_not_exist_an_exception_should_be_thrown_v2()
+    public function when_idea_does_not_exist_an_exception_should_be_thrown_v2(): void
     {
         self::expectException(IdeaNotFoundException::class);
 
@@ -65,9 +65,11 @@ class EmptyIdeaRepository implements IdeaRepository
 
     public function create(UuidInterface $ideaId, string $title, string $author, string $description): bool
     {
+        return true;
     }
 
     public function update(Idea $idea): bool
     {
+        return true;
     }
 }

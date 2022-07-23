@@ -6,20 +6,17 @@ namespace DesignPatterns\Factory\SimpleFactory;
 
 use DesignPatterns\Factory\SimpleFactory\Pizza\Margherita;
 use DesignPatterns\Factory\SimpleFactory\Pizza\Pizza;
+use InvalidArgumentException;
 
 class SimplePizzaFactory
 {
     public function createPizza(string $type): Pizza
     {
-        $pizza = null;
-
         switch ($type) {
             case 'margherita':
-                $pizza = new Margherita();
-
-                break;
+                return new Margherita();
+            default:
+                throw new InvalidArgumentException();
         }
-
-        return $pizza;
     }
 }

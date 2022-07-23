@@ -11,8 +11,8 @@ class CeilingFan
     public const LOW = 1;
     public const OFF = 0;
 
-    private $location;
-    private $speed;
+    private string $location;
+    private int $speed;
 
     public function __construct(string $location)
     {

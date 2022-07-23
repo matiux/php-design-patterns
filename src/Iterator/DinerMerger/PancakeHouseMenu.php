@@ -4,13 +4,17 @@ declare(strict_types=1);
 
 namespace DesignPatterns\Iterator\DinerMerger;
 
+use ArrayObject;
+
 class PancakeHouseMenu implements Menu
 {
-    private $menuItems;
+    /** @var ArrayObject<int, MenuItem> */
+    private ArrayObject $menuItems;
 
     public function __construct()
     {
-        $this->menuItems = new \ArrayObject();
+        /** @var ArrayObject<int, MenuItem> */
+        $this->menuItems = new ArrayObject();
 
         $this->addItem("K&B's Pancake Breakfast", 'Pancakes with scrambled eggs, and toast', true, 2.99);
         $this->addItem('Regular Pancake Breakfast', 'Pancakes with fried eggs, sausage', false, 2.99);
@@ -25,7 +29,7 @@ class PancakeHouseMenu implements Menu
         $this->menuItems->append($menuItem);
     }
 
-    public function getMenuItems(): \ArrayObject
+    public function getMenuItems(): ArrayObject
     {
         return $this->menuItems;
     }

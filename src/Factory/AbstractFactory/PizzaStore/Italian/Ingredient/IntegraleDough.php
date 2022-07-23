@@ -8,7 +8,7 @@ use DesignPatterns\Factory\AbstractFactory\PizzaStore\Ingredient\Dough;
 
 class IntegraleDough extends Dough
 {
-    public function getName()
+    public function getName(): string
     {
         return 'Impasto integrale';
     }

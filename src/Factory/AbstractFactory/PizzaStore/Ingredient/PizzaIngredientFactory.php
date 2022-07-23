@@ -4,6 +4,8 @@ declare(strict_types=1);
 
 namespace DesignPatterns\Factory\AbstractFactory\PizzaStore\Ingredient;
 
+use ArrayObject;
+
 interface PizzaIngredientFactory
 {
     public function createDough(): Dough; // Impasto
@@ -15,7 +17,7 @@ interface PizzaIngredientFactory
     public function createEggplant(): Eggplant;
 
     /**
-     * @return \ArrayObject|Veggie[]
+     * @return ArrayObject<int, Veggie>
      */
-    public function createVeggies(): \ArrayObject;
+    public function createVeggies(): ArrayObject;
 }

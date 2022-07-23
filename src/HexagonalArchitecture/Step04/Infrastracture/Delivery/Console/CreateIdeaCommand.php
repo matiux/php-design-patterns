@@ -13,7 +13,7 @@ use Symfony\Component\Console\Output\OutputInterface;
 
 class CreateIdeaCommand extends Command
 {
-    private $ideaService;
+    private CreateIdeaService $ideaService;
 
     public function __construct(CreateIdeaService $ideaService)
     {
@@ -22,7 +22,7 @@ class CreateIdeaCommand extends Command
         $this->ideaService = $ideaService;
     }
 
-    protected function configure()
+    protected function configure(): void
     {
         $this
             ->setName('app:create-idea')
@@ -31,14 +31,14 @@ class CreateIdeaCommand extends Command
             ->addArgument('description', InputArgument::OPTIONAL, "Idea's description", '');
     }
 
-    protected function execute(InputInterface $input, OutputInterface $output)
+    protected function execute(InputInterface $input, OutputInterface $output): void
     {
         $ideaId = $this->ideaService->execute(new CreateIdeaRequest(
-            $input->getArgument('title'),
-            $input->getArgument('author'),
-            $input->getArgument('description')
+            (string) $input->getArgument('title'),
+            (string) $input->getArgument('author'),
+            (string) $input->getArgument('description')
         ));
 
-        $output->write(sprintf("Idea created with Id %s\n", $ideaId));
+        $output->write(sprintf("Idea created with Id %s\n", $ideaId->toString()));
     }
 }

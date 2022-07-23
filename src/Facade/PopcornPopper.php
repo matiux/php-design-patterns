@@ -6,14 +6,14 @@ namespace DesignPatterns\Facade;
 
 class PopcornPopper
 {
-    private $description;
+    private string $description;
 
     public function __construct(string $description)
     {
         $this->description = $description;
     }
 
-    public function pop()
+    public function pop(): void
     {
         echo $this->description.' popping popcorn!'."\n";
     }
@@ -23,12 +23,12 @@ class PopcornPopper
         echo $this->description.' on'."\n";
     }
 
-    public function off()
+    public function off(): void
     {
         echo $this->description.' off'."\n";
     }
 
-    public function __toString()
+    public function __toString(): string
     {
         return $this->description;
     }

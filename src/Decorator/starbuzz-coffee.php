@@ -31,7 +31,7 @@ $espresso = new Espresso();
 $espresso->setSize(Beverage::PICCOLO);
 printBeverage($espresso);
 
-function printBeverage(Beverage $beverage)
+function printBeverage(Beverage $beverage): void
 {
     $size = '';
 

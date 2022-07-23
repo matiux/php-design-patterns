@@ -8,8 +8,8 @@ use DesignPatterns\Decorator\Beverage\Beverage;
 
 abstract class CondimentDecorator extends Beverage
 {
-    protected $beverage;
-    protected $condimentDescription = 'Condimento sconosciuto';
+    protected Beverage $beverage;
+    protected string $condimentDescription = 'Condimento sconosciuto';
 
     public function __construct(Beverage $beverage)
     {

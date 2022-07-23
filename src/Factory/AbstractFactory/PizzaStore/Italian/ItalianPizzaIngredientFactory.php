@@ -4,6 +4,7 @@ declare(strict_types=1);
 
 namespace DesignPatterns\Factory\AbstractFactory\PizzaStore\Italian;
 
+use ArrayObject;
 use DesignPatterns\Factory\AbstractFactory\PizzaStore\Ingredient\Cheese;
 use DesignPatterns\Factory\AbstractFactory\PizzaStore\Ingredient\Dough;
 use DesignPatterns\Factory\AbstractFactory\PizzaStore\Ingredient\Eggplant;
@@ -35,11 +36,12 @@ class ItalianPizzaIngredientFactory implements PizzaIngredientFactory
     }
 
     /**
-     * @return \ArrayObject|Veggie[]
+     * @return ArrayObject<int, Veggie>
      */
-    public function createVeggies(): \ArrayObject
+    public function createVeggies(): ArrayObject
     {
-        $veggies = new \ArrayObject();
+        /** @var ArrayObject<int, Veggie> $veggies */
+        $veggies = new ArrayObject();
         $veggies->append(new OriganoVeggie());
         $veggies->append(new BasilicoVeggie());
 

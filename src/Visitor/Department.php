@@ -13,6 +13,10 @@ class Department implements Entity
      */
     private array $employees;
 
+    /**
+     * @param string     $name
+     * @param Employee[] $employees
+     */
     public function __construct(string $name, array $employees)
     {
         $this->name = $name;
@@ -24,6 +28,9 @@ class Department implements Entity
         return $this->name;
     }
 
+    /**
+     * @return Employee[]
+     */
     public function getEmployees(): array
     {
         return $this->employees;

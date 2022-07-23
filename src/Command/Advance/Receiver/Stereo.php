@@ -6,7 +6,7 @@ namespace DesignPatterns\Command\Advance\Receiver;
 
 class Stereo
 {
-    private $location;
+    private string $location;
 
     public function __construct(string $location)
     {

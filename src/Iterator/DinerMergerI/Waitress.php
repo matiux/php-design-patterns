@@ -4,10 +4,12 @@ declare(strict_types=1);
 
 namespace DesignPatterns\Iterator\DinerMergerI;
 
+use Iterator;
+
 class Waitress
 {
-    private $pancakeHouseMenu;
-    private $dinerMenu;
+    private Menu $pancakeHouseMenu;
+    private Menu $dinerMenu;
 
     public function __construct(Menu $pancakeHouseMenu, Menu $dinerMenu)
     {
@@ -15,7 +17,7 @@ class Waitress
         $this->dinerMenu = $dinerMenu;
     }
 
-    public function printMenu()
+    public function printMenu(): void
     {
         $pancakeIterator = $this->pancakeHouseMenu->createIterator();
         $dinerIterator = $this->dinerMenu->createIterator();
@@ -26,7 +28,10 @@ class Waitress
         $this->doPrintMenu($dinerIterator);
     }
 
-    private function doPrintMenu(\Iterator $iterator): void
+    /**
+     * @param Iterator<MenuItem> $iterator
+     */
+    private function doPrintMenu(Iterator $iterator): void
     {
         foreach ($iterator as $menuItem) {
             echo sprintf("%s, $%s -- %s\n", $menuItem->getName(), $menuItem->getPrice(), $menuItem->getDescription());
@@ -39,7 +44,10 @@ class Waitress
         $this->doPrintVegetarianMenu($this->dinerMenu->createIterator());
     }
 
-    private function doPrintVegetarianMenu(\Iterator $iterator): void
+    /**
+     * @param Iterator<MenuItem> $iterator
+     */
+    private function doPrintVegetarianMenu(Iterator $iterator): void
     {
         foreach ($iterator as $menuItem) {
             if ($menuItem->isVegetarian()) {
@@ -65,7 +73,13 @@ class Waitress
         return false;
     }
 
-    private function isVegetarian(string $name, \Iterator $iterator): bool
+    /**
+     * @param string             $name
+     * @param Iterator<MenuItem> $iterator
+     *
+     * @return bool
+     */
+    private function isVegetarian(string $name, Iterator $iterator): bool
     {
         foreach ($iterator as $menuItem) {
             if ($menuItem->getName() === $name) {

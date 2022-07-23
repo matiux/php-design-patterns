@@ -6,14 +6,14 @@ namespace DesignPatterns\Facade;
 
 class TheaterLights
 {
-    private $description;
+    private string $description;
 
     public function __construct(string $description)
     {
         $this->description = $description;
     }
 
-    public function dim(int $level)
+    public function dim(int $level): void
     {
         echo sprintf("%s dimming to %d%%\n", $this->description, $level);
     }
@@ -23,7 +23,7 @@ class TheaterLights
         echo $this->description.' on'."\n";
     }
 
-    public function __toString()
+    public function __toString(): string
     {
         return $this->description;
     }

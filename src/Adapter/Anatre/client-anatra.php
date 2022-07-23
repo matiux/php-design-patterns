@@ -37,7 +37,7 @@ runAnatra($tacchinoAdapter);
 
 echo '---------'."\n";
 
-function runAnatra(Anatra $anatra)
+function runAnatra(Anatra $anatra): void
 {
     $anatra->quack();
     $anatra->vola();

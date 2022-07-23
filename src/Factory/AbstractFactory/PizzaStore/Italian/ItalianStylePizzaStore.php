@@ -8,6 +8,7 @@ use DesignPatterns\Factory\AbstractFactory\PizzaStore\Italian\Pizza\ItalianMargh
 use DesignPatterns\Factory\AbstractFactory\PizzaStore\Italian\Pizza\ItalianMelanzane;
 use DesignPatterns\Factory\AbstractFactory\PizzaStore\Pizza\Pizza;
 use DesignPatterns\Factory\AbstractFactory\PizzaStore\Pizza\PizzaStore;
+use InvalidArgumentException;
 
 class ItalianStylePizzaStore extends PizzaStore
 {
@@ -20,7 +21,6 @@ class ItalianStylePizzaStore extends PizzaStore
      */
     protected function createPizza(string $type): Pizza
     {
-        $pizza = null;
         $pizzaIngredientFactory = new ItalianPizzaIngredientFactory();
 
         switch ($type) {
@@ -34,6 +34,8 @@ class ItalianStylePizzaStore extends PizzaStore
                 $pizza->setName('Pizza con melanzane');
 
                 break;
+            default:
+                throw new InvalidArgumentException(sprintf('Invalid type: %s', $type));
         }
 
         return $pizza;

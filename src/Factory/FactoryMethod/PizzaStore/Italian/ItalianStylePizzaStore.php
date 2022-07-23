@@ -8,31 +8,22 @@ use DesignPatterns\Factory\FactoryMethod\PizzaStore\Italian\Pizza\ItalianMargher
 use DesignPatterns\Factory\FactoryMethod\PizzaStore\Italian\Pizza\ItalianMelanzane;
 use DesignPatterns\Factory\FactoryMethod\PizzaStore\Pizza\Pizza;
 use DesignPatterns\Factory\FactoryMethod\PizzaStore\Pizza\PizzaStore;
+use InvalidArgumentException;
 
 class ItalianStylePizzaStore extends PizzaStore
 {
     /**
      * Factory method.
-     *
-     * @param string $type
-     *
-     * @return Pizza
      */
     protected function createPizza(string $type): Pizza
     {
-        $pizza = null;
-
         switch ($type) {
             case 'margherita':
-                $pizza = new ItalianMargherita();
-
-                break;
+                return new ItalianMargherita();
             case 'melanzane':
-                $pizza = new ItalianMelanzane();
-
-                break;
+                return new ItalianMelanzane();
+            default:
+                throw new InvalidArgumentException();
         }
-
-        return $pizza;
     }
 }

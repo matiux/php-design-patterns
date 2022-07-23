@@ -6,6 +6,9 @@ namespace DesignPatterns\Factory\AbstractFactory\PizzaStore\Italian\Pizza;
 
 use DesignPatterns\Factory\AbstractFactory\PizzaStore\Pizza\Pizza;
 
+/**
+ * @psalm-suppress PropertyNotSetInConstructor
+ */
 class ItalianMargherita extends Pizza
 {
     public function prepare(): void
@@ -22,8 +25,8 @@ class ItalianMargherita extends Pizza
         echo "\t".$this->sauce->getName()."\n";
         echo "\t".$this->cheese->getName()."\n";
 
-        foreach ($this->veggies as $veggy) {
-            echo "\t".$veggy->getName()."\n";
+        foreach ($this->veggies as $veggie) {
+            echo "\t".$veggie->getName()."\n";
         }
     }
 }

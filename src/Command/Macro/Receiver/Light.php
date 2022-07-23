@@ -13,12 +13,12 @@ class Light
         $this->location = $location;
     }
 
-    public function off()
+    public function off(): void
     {
         echo $this->location.' Light is off'."\n";
     }
 
-    public function on()
+    public function on(): void
     {
         echo $this->location.' Light is on'."\n";
     }

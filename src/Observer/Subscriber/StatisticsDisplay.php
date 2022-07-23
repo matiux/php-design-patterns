@@ -7,16 +7,16 @@ namespace DesignPatterns\Observer\Subscriber;
 use DesignPatterns\Observer\Publisher\Subject;
 use DesignPatterns\Observer\Publisher\WeatherData;
 
+/**
+ * @psalm-suppress PropertyNotSetInConstructor
+ */
 class StatisticsDisplay implements Observer, DisplayElement
 {
-    private $maxTemp = 0;
-    private $minTemp = 93.3;
-    private $tempSum = 0;
-
-    private $numReadings;
-
-    /** @var WeatherData */
-    private $weatherData;
+    private float $maxTemp = 0;
+    private float$minTemp = 93.3;
+    private float $tempSum = 0;
+    private int $numReadings = 0;
+    private Subject $weatherData;
 
     public function __construct(Subject $weatherData)
     {

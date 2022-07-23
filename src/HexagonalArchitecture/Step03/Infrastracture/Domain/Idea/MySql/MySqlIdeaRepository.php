@@ -2,17 +2,18 @@
 
 declare(strict_types=1);
 
-namespace DesignPatterns\ExagonalArchitecture\Step03\Infrastracture\Domain\Idea\MySql;
+namespace DesignPatterns\HexagonalArchitecture\Step03\Infrastracture\Domain\Idea\MySql;
 
-use DesignPatterns\ExagonalArchitecture\ConnectionFactory;
-use DesignPatterns\ExagonalArchitecture\Step03\Domain\Idea\Idea;
-use DesignPatterns\ExagonalArchitecture\Step03\Domain\Idea\IdeaRepository;
+use DesignPatterns\HexagonalArchitecture\ConnectionFactory;
+use DesignPatterns\HexagonalArchitecture\Step03\Domain\Idea\Idea;
+use DesignPatterns\HexagonalArchitecture\Step03\Domain\Idea\IdeaRepository;
+use Doctrine\DBAL\Connection;
 use Ramsey\Uuid\Uuid;
 use Ramsey\Uuid\UuidInterface;
 
 class MySqlIdeaRepository implements IdeaRepository
 {
-    private $connection;
+    private Connection $connection;
 
     public function __construct()
     {
@@ -24,21 +25,21 @@ class MySqlIdeaRepository implements IdeaRepository
         $sql = 'SELECT * FROM ideas WHERE id = ?';
         $stmt = $this->connection->prepare($sql);
         $stmt->bindValue(1, $id->toString());
-        $stmt->execute();
+        $result = $stmt->executeQuery();
 
-        $row = $stmt->fetch();
+        $row = $result->fetchAssociative();
 
         if (!$row) {
             return null;
         }
 
         $idea = new Idea();
-        $idea->setId(Uuid::fromString($row['id']));
-        $idea->setTitle($row['title']);
-        $idea->setDescription($row['description']);
-        $idea->setAuthor($row['author']);
-        $idea->setVotes($row['votes']);
-        $idea->setRating($row['rating']);
+        $idea->setId(Uuid::fromString((string) $row['id']));
+        $idea->setTitle((string) $row['title']);
+        $idea->setDescription((string) $row['description']);
+        $idea->setAuthor((string) $row['author']);
+        $idea->setVotes((int) $row['votes']);
+        $idea->setRating((float) $row['rating']);
 
         return $idea;
     }
@@ -62,7 +63,7 @@ class MySqlIdeaRepository implements IdeaRepository
             'votes' => $idea->getVotes(),
         ];
 
-        $updated = $this->connection->update('ideas', $data, ['id' => (string) $idea->getId()]);
+        $updated = $this->connection->update('ideas', $data, ['id' => $idea->getId()->toString()]);
 
         return $updated > 0;
     }

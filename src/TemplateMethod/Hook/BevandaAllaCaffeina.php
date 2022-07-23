@@ -6,7 +6,7 @@ namespace DesignPatterns\TemplateMethod\Hook;
 
 abstract class BevandaAllaCaffeina
 {
-    final public function preparaBevanda()
+    final public function preparaBevanda(): void
     {
         $this->bolliAcqua();
         $this->miscela();

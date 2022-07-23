@@ -4,12 +4,15 @@ declare(strict_types=1);
 
 namespace DesignPatterns\Facade;
 
+/**
+ * @psalm-suppress PropertyNotSetInConstructor
+ */
 class Amplifier
 {
-    private $description;
-    private $tuner;
-    private $dvd;
-    private $cd;
+    private string $description;
+    private Tuner $tuner;
+    private DvdPlayer $dvd;
+    private CdPlayer $cd;
 
     public function __construct(string $description)
     {

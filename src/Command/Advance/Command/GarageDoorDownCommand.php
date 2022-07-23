@@ -8,7 +8,7 @@ use DesignPatterns\Command\Advance\Receiver\GarageDoor;
 
 class GarageDoorDownCommand implements Command
 {
-    private $garageDoor;
+    private GarageDoor $garageDoor;
 
     public function __construct(GarageDoor $garageDoor)
     {

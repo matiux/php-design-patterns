@@ -2,18 +2,18 @@
 
 declare(strict_types=1);
 
-namespace DesignPatterns\ExagonalArchitecture\Step02;
+namespace DesignPatterns\HexagonalArchitecture\Step02;
 
 use Ramsey\Uuid\UuidInterface;
 
 class Idea
 {
-    private $id;
-    private $title;
-    private $description;
-    private $votes;
-    private $author;
-    private $rating;
+    private UuidInterface $id;
+    private string $title;
+    private string $description;
+    private int $votes;
+    private string  $author;
+    private float $rating;
 
     public function setId(UuidInterface $id): void
     {
@@ -51,7 +51,7 @@ class Idea
         $this->rating = ($rating + $this->rating) / $this->votes;
     }
 
-    public function getRating(): int
+    public function getRating(): float
     {
         return $this->rating;
     }

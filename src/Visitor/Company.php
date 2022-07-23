@@ -16,6 +16,10 @@ class Company implements Entity
      */
     private array $departments;
 
+    /**
+     * @param string       $name
+     * @param Department[] $departments
+     */
     public function __construct(string $name, array $departments)
     {
         $this->name = $name;
@@ -27,6 +31,9 @@ class Company implements Entity
         return $this->name;
     }
 
+    /**
+     * @return Department[]
+     */
     public function getDepartments(): array
     {
         return $this->departments;

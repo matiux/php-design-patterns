@@ -8,7 +8,7 @@ use DesignPatterns\Adapter\Anatre\Anatra;
 use DesignPatterns\Adapter\Anatre\AnatraAdapter;
 use DesignPatterns\Adapter\Anatre\GermanoReale;
 
-function runAnatra(Anatra $anatra)
+function runAnatra(Anatra $anatra): void
 {
     $anatra->quack();
     $anatra->vola();

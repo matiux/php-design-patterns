@@ -8,7 +8,7 @@ use DesignPatterns\Factory\AbstractFactory\PizzaStore\Ingredient\Sauce;
 
 class PomodoroFrescoSauce extends Sauce
 {
-    public function getName()
+    public function getName(): string
     {
         return 'Polpa di pomodoro fresco bio';
     }

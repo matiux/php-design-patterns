@@ -8,7 +8,7 @@ use DesignPatterns\Factory\AbstractFactory\PizzaStore\Ingredient\Eggplant;
 
 class ItalianMelanzanaBio extends Eggplant
 {
-    public function getName()
+    public function getName(): string
     {
         return 'Melanzana bio';
     }

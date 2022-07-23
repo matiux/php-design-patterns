@@ -6,9 +6,9 @@ namespace DesignPatterns\Iterator\DinerMerger;
 
 class Waitress
 {
-    private $pancakeHouseMenu;
-    private $dinerMenu;
-    private $cafeMenu;
+    private Menu $pancakeHouseMenu;
+    private Menu $dinerMenu;
+    private Menu $cafeMenu;
 
     public function __construct(Menu $pancakeHouseMenu, Menu $dinerMenu, CafeMenu $cafeMenu)
     {
@@ -20,7 +20,7 @@ class Waitress
     /**
      * Violazione del principio Open Closed (Open Closed Principle).
      */
-    public function printMenu()
+    public function printMenu(): void
     {
         $pancakeIterator = $this->pancakeHouseMenu->createIterator();
         $dinerIterator = $this->dinerMenu->createIterator();

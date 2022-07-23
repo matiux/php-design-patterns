@@ -2,9 +2,10 @@
 
 declare(strict_types=1);
 
-namespace DesignPatterns\ExagonalArchitecture\Step02;
+namespace DesignPatterns\HexagonalArchitecture\Step02;
 
-use DesignPatterns\ExagonalArchitecture\Request;
+use DesignPatterns\HexagonalArchitecture\Request;
+use Exception;
 use Ramsey\Uuid\Uuid;
 use Ramsey\Uuid\UuidInterface;
 
@@ -27,16 +28,16 @@ use Ramsey\Uuid\UuidInterface;
  */
 class IdeaController
 {
-    public function rateAction(Request $request)
+    public function rateAction(Request $request): void
     {
-        $ideaId = $request->getParam('id');
-        $rating = $request->getParam('rating');
+        $ideaId = (string) $request->getParam('id');
+        $rating = (int) $request->getParam('rating');
 
         $ideaRepository = new IdeaRepository();
         $idea = $ideaRepository->find(Uuid::fromString($ideaId));
 
         if (!$idea) {
-            throw new \Exception('Idea does not exist');
+            throw new Exception('Idea does not exist');
         }
 
         $idea->addRating($rating);
@@ -53,9 +54,9 @@ class IdeaController
 
         $ideaRepository->create(
             $ideaId,
-            $request->getParam('title'),
-            $request->getParam('author'),
-            $request->getParam('description')
+            (string) $request->getParam('title'),
+            (string) $request->getParam('author'),
+            (string) $request->getParam('description')
         );
 
         echo sprintf("Idea created with ID %s\n", $ideaId->toString());

@@ -6,10 +6,13 @@ namespace DesignPatterns\Observer\Subscriber;
 
 use DesignPatterns\Observer\Publisher\Subject;
 
+/**
+ * @psalm-suppress PropertyNotSetInConstructor
+ */
 class ForecastDisplay implements Observer, DisplayElement
 {
-    private $currentPressure = 29.92;
-    private $lastPressure;
+    private float $currentPressure = 29.92;
+    private float $lastPressure;
 
     public function __construct(Subject $weatherData)
     {

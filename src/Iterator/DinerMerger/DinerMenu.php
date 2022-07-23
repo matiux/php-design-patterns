@@ -8,10 +8,10 @@ class DinerMenu implements Menu
 {
     private const MAX_ITEMS = 6;
 
-    private $numberOfItems = 0;
+    private int $numberOfItems = 0;
 
     /** @var MenuItem[] */
-    private $menuItems = [];
+    private array $menuItems = [];
 
     public function __construct()
     {

@@ -4,12 +4,15 @@ declare(strict_types=1);
 
 namespace DesignPatterns\Facade;
 
+/**
+ * @psalm-suppress PropertyNotSetInConstructor
+ */
 class DvdPlayer
 {
-    private $description;
-    private $currentTrack;
-    private $amplifier;
-    private $movie;
+    private string $description;
+    private int $currentTrack;
+    private Amplifier $amplifier;
+    private ?string $movie;
 
     public function __construct(string $description, Amplifier $amplifier)
     {
@@ -22,31 +25,32 @@ class DvdPlayer
         echo $this->description.' on'."\n";
     }
 
-    public function play(string $movie)
+    public function play(string $movie): void
     {
         $this->movie = $movie;
         $this->currentTrack = 0;
         echo sprintf("%s playing \"%s\"\n", $this->description, $this->movie);
     }
 
-    public function stop()
+    public function stop(): void
     {
         $this->currentTrack = 0;
-        echo sprintf("%s stopped \"%s\"\n", $this->description, $this->movie);
+        echo sprintf("%s stopped \"%s\"\n", $this->description, (string) $this->movie);
     }
 
-    public function eject()
+    public function eject(): void
     {
         $this->movie = null;
+
         echo $this->description.' eject'."\n";
     }
 
-    public function off()
+    public function off(): void
     {
         echo $this->description.' off'."\n";
     }
 
-    public function __toString()
+    public function __toString(): string
     {
         return $this->description;
     }

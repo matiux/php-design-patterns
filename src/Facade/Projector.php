@@ -6,8 +6,8 @@ namespace DesignPatterns\Facade;
 
 class Projector
 {
-    private $description;
-    private $dvdPlayer;
+    private string $description;
+    private DvdPlayer $dvdPlayer;
 
     public function __construct(string $description, DvdPlayer $dvdPlayer)
     {
@@ -20,17 +20,17 @@ class Projector
         echo $this->description.' on'."\n";
     }
 
-    public function off()
+    public function off(): void
     {
         echo $this->description.' off'."\n";
     }
 
-    public function wideScreenMode()
+    public function wideScreenMode(): void
     {
         echo $this->description.' in widescreen mode (16x9 aspect ratio)'."\n";
     }
 
-    public function __toString()
+    public function __toString(): string
     {
         return $this->description;
     }

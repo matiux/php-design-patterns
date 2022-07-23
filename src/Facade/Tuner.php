@@ -6,9 +6,9 @@ namespace DesignPatterns\Facade;
 
 class Tuner
 {
-    private $description;
-    private $amplifier;
-    private $frequency;
+    private string $description;
+    private Amplifier $amplifier;
+    private float $frequency = 0.0;
 
     public function __construct(string $description, Amplifier $amplifier)
     {
@@ -16,9 +16,10 @@ class Tuner
         $this->amplifier = $amplifier;
     }
 
-    public function setFrequency(float $frequency)
+    public function setFrequency(float $frequency): void
     {
         echo sprintf("%s setting frequency to to %f\n", $this->description, $frequency);
+
         $this->frequency = $frequency;
     }
 
@@ -27,12 +28,12 @@ class Tuner
         echo $this->description.' on'."\n";
     }
 
-    public function off()
+    public function off(): void
     {
         echo $this->description.' off'."\n";
     }
 
-    public function __toString()
+    public function __toString(): string
     {
         return $this->description;
     }

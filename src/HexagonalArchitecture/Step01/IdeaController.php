@@ -2,10 +2,11 @@
 
 declare(strict_types=1);
 
-namespace DesignPatterns\ExagonalArchitecture\Step01;
+namespace DesignPatterns\HexagonalArchitecture\Step01;
 
-use DesignPatterns\ExagonalArchitecture\Request;
+use DesignPatterns\HexagonalArchitecture\Request;
 use Doctrine\DBAL\Connection;
+use Exception;
 use Ramsey\Uuid\Uuid;
 use Ramsey\Uuid\UuidInterface;
 
@@ -14,36 +15,36 @@ use Ramsey\Uuid\UuidInterface;
  */
 class IdeaController
 {
-    private $connection;
+    private Connection $connection;
 
     public function __construct(Connection $connection)
     {
         $this->connection = $connection;
     }
 
-    public function rateAction(Request $request)
+    public function rateAction(Request $request): void
     {
-        $ideaId = $request->getParam('id');
-        $rating = $request->getParam('rating');
+        $ideaId = (string) $request->getParam('id');
+        $rating = (float) $request->getParam('rating');
 
         $sql = 'SELECT * FROM ideas WHERE id = ?';
         $stmt = $this->connection->prepare($sql);
         $stmt->bindValue(1, $ideaId);
-        $stmt->execute();
+        $result = $stmt->executeQuery();
 
-        $row = $stmt->fetch();
+        $row = $result->fetchAssociative();
 
         if (!$row) {
-            throw new \Exception('Idea does not exist');
+            throw new Exception('Idea does not exist');
         }
 
         $idea = new Idea();
-        $idea->setId(Uuid::fromString($row['id']));
-        $idea->setTitle($row['title']);
-        $idea->setDescription($row['description']);
-        $idea->setAuthor($row['author']);
-        $idea->setVotes($row['votes']);
-        $idea->setRating($row['rating']);
+        $idea->setId(Uuid::fromString((string) $row['id']));
+        $idea->setTitle((string) $row['title']);
+        $idea->setDescription((string) $row['description']);
+        $idea->setAuthor((string) $row['author']);
+        $idea->setVotes((int) $row['votes']);
+        $idea->setRating((float) $row['rating']);
 
         $idea->addRating($rating);
 

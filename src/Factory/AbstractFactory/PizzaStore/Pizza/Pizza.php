@@ -4,22 +4,26 @@ declare(strict_types=1);
 
 namespace DesignPatterns\Factory\AbstractFactory\PizzaStore\Pizza;
 
+use ArrayObject;
+use DesignPatterns\Factory\AbstractFactory\PizzaStore\Ingredient\Ingredient;
 use DesignPatterns\Factory\AbstractFactory\PizzaStore\Ingredient\PizzaIngredientFactory;
 
+/**
+ * @psalm-suppress PropertyNotSetInConstructor
+ */
 abstract class Pizza
 {
-    protected $name;
-    protected $dough; // Impasto
-    protected $veggies;
-    protected $cheese;
-    protected $sauce;
-    protected $eggplant;
-
-    protected $pizzaIngredientFactory;
+    protected string $name;
+    protected Ingredient $dough; // Impasto
+    protected ArrayObject $veggies;
+    protected Ingredient $cheese;
+    protected Ingredient $sauce;
+    protected Ingredient $eggplant;
+    protected PizzaIngredientFactory $pizzaIngredientFactory;
 
     public function __construct(PizzaIngredientFactory $pizzaIngredientFactory)
     {
-        $this->veggies = new \ArrayObject();
+        $this->veggies = new ArrayObject();
         $this->pizzaIngredientFactory = $pizzaIngredientFactory;
     }
 

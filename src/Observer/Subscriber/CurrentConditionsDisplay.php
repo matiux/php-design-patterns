@@ -8,8 +8,8 @@ use DesignPatterns\Observer\Publisher\Subject;
 
 class CurrentConditionsDisplay implements Observer, DisplayElement
 {
-    private $temperature = 0;
-    private $humidity = 0;
+    private float $temperature = 0;
+    private float  $humidity = 0;
 
     public function __construct(Subject $weatherData)
     {

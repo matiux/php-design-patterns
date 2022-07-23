@@ -4,20 +4,25 @@ declare(strict_types=1);
 
 namespace DesignPatterns\Observer\Publisher;
 
+use ArrayObject;
 use DesignPatterns\Observer\Subscriber\Observer;
 
+/**
+ * @psalm-suppress PropertyNotSetInConstructor
+ */
 class WeatherData implements Subject
 {
-    /** @var Observer[] */
-    private $observers;
+    /** @var ArrayObject<int, Observer> */
+    private ArrayObject $observers;
 
-    private $temperature;
-    private $humidity;
-    private $pressure;
+    private float $temperature;
+    private float $humidity;
+    private float $pressure;
 
     public function __construct()
     {
-        $this->observers = new \ArrayObject();
+        /** @var ArrayObject<int, Observer> */
+        $this->observers = new ArrayObject();
     }
 
     public function registerObserver(Observer $observer): void
@@ -41,12 +46,12 @@ class WeatherData implements Subject
         }
     }
 
-    public function measurementsChanged()
+    public function measurementsChanged(): void
     {
         $this->notifyObservers();
     }
 
-    public function setMeasurements(float $temp, float $humidity, float $pressure)
+    public function setMeasurements(float $temp, float $humidity, float $pressure): void
     {
         $this->temperature = $temp;
         $this->humidity = $humidity;

@@ -4,13 +4,17 @@ declare(strict_types=1);
 
 namespace DesignPatterns\Command\Advance\Command;
 
+use ArrayObject;
+
 class Commands
 {
-    private $commands;
+    /** @var ArrayObject<int, Command> */
+    private ArrayObject $commands;
 
     public function __construct()
     {
-        $this->commands = new \ArrayObject();
+        /** @var ArrayObject<int, Command> */
+        $this->commands = new ArrayObject();
     }
 
     public function append(int $offset, Command $command): void

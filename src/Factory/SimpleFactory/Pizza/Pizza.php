@@ -6,11 +6,11 @@ namespace DesignPatterns\Factory\SimpleFactory\Pizza;
 
 interface Pizza
 {
-    public function prepare();
+    public function prepare(): void;
 
-    public function bake();
+    public function bake(): void;
 
-    public function cut();
+    public function cut(): void;
 
-    public function box();
+    public function box(): void;
 }

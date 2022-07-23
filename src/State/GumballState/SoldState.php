@@ -45,7 +45,7 @@ class SoldState implements State
     {
     }
 
-    public function __toString()
+    public function __toString(): string
     {
         return "Dispensing a gumball\n";
     }

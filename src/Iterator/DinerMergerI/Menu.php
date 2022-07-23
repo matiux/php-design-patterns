@@ -8,5 +8,8 @@ use Iterator;
 
 interface Menu
 {
+    /**
+     * @return Iterator<MenuItem>
+     */
     public function createIterator(): Iterator;
 }

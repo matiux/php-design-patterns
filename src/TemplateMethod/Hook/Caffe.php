@@ -18,9 +18,7 @@ class Caffe extends BevandaAllaCaffeina
 
     protected function clienteVuoleCondimenti(): bool
     {
-        $condire = $this->condimentoNecessario();
-
-        return $condire;
+        return $this->condimentoNecessario();
     }
 
     private function condimentoNecessario(): bool

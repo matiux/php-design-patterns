@@ -6,10 +6,13 @@ namespace DesignPatterns\Command\Undo\Command;
 
 use DesignPatterns\Command\Undo\Receiver\CeilingFan;
 
+/**
+ * @psalm-suppress PropertyNotSetInConstructor
+ */
 class CeilingFanHighCommand implements Command
 {
-    private $ceilingFan;
-    private $prevSpeed;
+    private CeilingFan $ceilingFan;
+    private int $prevSpeed;
 
     public function __construct(CeilingFan $ceilingFan)
     {

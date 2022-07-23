@@ -2,13 +2,16 @@
 
 declare(strict_types=1);
 
-namespace DesignPatterns\ExagonalArchitecture;
+namespace DesignPatterns\HexagonalArchitecture;
 
+use Doctrine\DBAL\Configuration;
 use Doctrine\DBAL\Connection;
+use Doctrine\DBAL\DriverManager;
+use Exception;
 
 class ConnectionFactory
 {
-    private static $connectionParams = [
+    private static array $connectionParams = [
         'dbname' => 'idy',
         'user' => 'user',
         'password' => 'password',
@@ -22,14 +25,11 @@ class ConnectionFactory
 
     public static function create(): Connection
     {
-        $config = new \Doctrine\DBAL\Configuration();
-
-        $conn = \Doctrine\DBAL\DriverManager::getConnection(static::$connectionParams, $config);
-
-        return $conn;
+        /** @psalm-suppress MixedArgumentTypeCoercion */
+        return DriverManager::getConnection(static::$connectionParams, new Configuration());
     }
 
-    public static function truncateTables()
+    public static function truncateTables(): void
     {
         $conn = static::create();
 
@@ -41,12 +41,12 @@ class ConnectionFactory
             $conn->beginTransaction();
 
             try {
-                $conn->query('SET FOREIGN_KEY_CHECKS=0');
+                $conn->executeQuery('SET FOREIGN_KEY_CHECKS=0');
                 $q = $dbPlatform->getTruncateTableSql($table->getName());
-                $conn->executeUpdate($q);
-                $conn->query('SET FOREIGN_KEY_CHECKS=1');
+                $conn->executeStatement($q);
+                $conn->executeQuery('SET FOREIGN_KEY_CHECKS=1');
                 $conn->commit();
-            } catch (\Exception $e) {
+            } catch (Exception $e) {
                 $conn->rollback();
             }
         }

@@ -10,9 +10,9 @@ abstract class Beverage
     public const MEDIO = 1;
     public const GRANDE = 2;
 
-    protected $description = 'Bevanda non definita';
+    protected string $description = 'Bevanda non definita';
 
-    protected $size = self::PICCOLO;
+    protected int $size = self::PICCOLO;
 
     public function getDescription(): string
     {

@@ -38,7 +38,7 @@ class SoldOutState implements State
         $this->gumballMachine->setState($this->gumballMachine->getNoQuarterState());
     }
 
-    public function __toString()
+    public function __toString(): string
     {
         return "Sold out\n";
     }

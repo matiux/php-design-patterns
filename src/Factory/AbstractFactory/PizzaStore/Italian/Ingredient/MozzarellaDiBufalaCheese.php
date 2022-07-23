@@ -8,7 +8,7 @@ use DesignPatterns\Factory\AbstractFactory\PizzaStore\Ingredient\Cheese;
 
 class MozzarellaDiBufalaCheese extends Cheese
 {
-    public function getName()
+    public function getName(): string
     {
         return 'Mozzarella di bufala campana';
     }

@@ -5,6 +5,7 @@ declare(strict_types=1);
 namespace DesignPatterns\HexagonalArchitecture\Step04\Application\Service\Idea;
 
 use DesignPatterns\HexagonalArchitecture\Step04\Application\Service\Idea\Exception\IdeaNotFoundException;
+use DesignPatterns\HexagonalArchitecture\Step04\Domain\Idea\Idea;
 use DesignPatterns\HexagonalArchitecture\Step04\Domain\Idea\IdeaRepository;
 use Ramsey\Uuid\UuidInterface;
 
@@ -25,10 +26,17 @@ abstract class IdeaService
         $this->ideaRepository = $ideaRepository;
     }
 
-    protected function findIdeaOrFail(UuidInterface $ideaId)
+    /**
+     * @param UuidInterface $ideaId
+     *
+     * @throws IdeaNotFoundException
+     *
+     * @return Idea
+     */
+    protected function findIdeaOrFail(UuidInterface $ideaId): Idea
     {
         if (!$idea = $this->ideaRepository->find($ideaId)) {
-            throw new IdeaNotFoundException(sprintf('Idea not found with id %s', $ideaId));
+            throw new IdeaNotFoundException(sprintf('Idea not found with id %s', $ideaId->toString()));
         }
 
         return $idea;

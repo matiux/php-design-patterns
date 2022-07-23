@@ -9,11 +9,8 @@ use DesignPatterns\Strategy\Behavior\QuackBehavior;
 
 abstract class Duck
 {
-    /** @var QuackBehavior */
-    protected $quackBehavior;
-
-    /** @var FlyBehavior */
-    protected $flyBehavior;
+    protected QuackBehavior $quackBehavior;
+    protected FlyBehavior $flyBehavior;
 
     abstract public function display(): void;
 
@@ -27,7 +24,7 @@ abstract class Duck
         $this->flyBehavior->fly();
     }
 
-    public function swim(): string
+    public function swim(): void
     {
         echo "Tutte le anatre galleggiano\n";
     }

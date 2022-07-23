@@ -39,7 +39,7 @@ class NoQuarterState implements State
     {
     }
 
-    public function __toString()
+    public function __toString(): string
     {
         return "Waiting for quarter\n";
     }

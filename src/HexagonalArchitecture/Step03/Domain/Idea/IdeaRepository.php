@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace DesignPatterns\ExagonalArchitecture\Step03\Domain\Idea;
+namespace DesignPatterns\HexagonalArchitecture\Step03\Domain\Idea;
 
 use Ramsey\Uuid\UuidInterface;
 

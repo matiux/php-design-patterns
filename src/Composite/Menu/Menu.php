@@ -4,16 +4,19 @@ declare(strict_types=1);
 
 namespace DesignPatterns\Composite\Menu;
 
+use ArrayObject;
+
 class Menu extends MenuComponent
 {
-    /** @var \ArrayObject|MenuComponent[] */
-    private $menuComponents;
-    private $name;
-    private $description;
+    /** @var ArrayObject<int, MenuComponent> */
+    private ArrayObject $menuComponents;
+    private string $name;
+    private string $description;
 
     public function __construct(string $name, string $description)
     {
-        $this->menuComponents = new \ArrayObject();
+        /** @var ArrayObject<int, MenuComponent> */
+        $this->menuComponents = new ArrayObject();
 
         $this->name = $name;
         $this->description = $description;

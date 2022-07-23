@@ -37,7 +37,7 @@ class SoldOutState implements State
     {
     }
 
-    public function __toString()
+    public function __toString(): string
     {
         return "Sold out\n";
     }

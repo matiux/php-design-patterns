@@ -55,7 +55,7 @@ class WinnerState implements State
     {
     }
 
-    public function __toString()
+    public function __toString(): string
     {
         return "Dispensing two gumballs for your quarter, because YOU'RE A WINNER!\n";
     }

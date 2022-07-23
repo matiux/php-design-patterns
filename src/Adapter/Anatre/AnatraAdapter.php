@@ -6,8 +6,8 @@ namespace DesignPatterns\Adapter\Anatre;
 
 class AnatraAdapter implements Tacchino
 {
-    private $anatra;
-    private $rand;
+    private Anatra $anatra;
+    private int $rand;
 
     public function __construct(Anatra $anatra)
     {

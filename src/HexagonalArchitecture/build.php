@@ -4,14 +4,15 @@ declare(strict_types=1);
 
 require dirname(__DIR__).'/../vendor/autoload.php';
 
-use DesignPatterns\ExagonalArchitecture\ConnectionFactory;
+use DesignPatterns\HexagonalArchitecture\ConnectionFactory;
+use Doctrine\DBAL\Schema\Table;
 
 $conn = ConnectionFactory::create();
 
 $schemaManager = $conn->getSchemaManager();
 
 if (!$schemaManager->tablesExist(['ideas'])) {
-    $ideas = new \Doctrine\DBAL\Schema\Table('ideas');
+    $ideas = new Table('ideas');
     $ideas->addColumn('id', 'string', ['length' => 36]);
     $ideas->setPrimaryKey(['id']);
     $ideas->addColumn('title', 'string', ['nullable' => false]);

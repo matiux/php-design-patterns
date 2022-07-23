@@ -4,9 +4,9 @@ declare(strict_types=1);
 
 require dirname(__DIR__).'/../../vendor/autoload.php';
 
-use DesignPatterns\ExagonalArchitecture\ConnectionFactory;
-use DesignPatterns\ExagonalArchitecture\Request;
-use DesignPatterns\ExagonalArchitecture\Step03\Infrastracture\Delivery\Http\Controller\IdeaController;
+use DesignPatterns\HexagonalArchitecture\ConnectionFactory;
+use DesignPatterns\HexagonalArchitecture\Request;
+use DesignPatterns\HexagonalArchitecture\Step03\Infrastracture\Delivery\Http\Controller\IdeaController;
 
 ConnectionFactory::truncateTables();
 

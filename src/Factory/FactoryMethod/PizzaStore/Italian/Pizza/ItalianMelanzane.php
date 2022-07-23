@@ -6,6 +6,9 @@ namespace DesignPatterns\Factory\FactoryMethod\PizzaStore\Italian\Pizza;
 
 use DesignPatterns\Factory\FactoryMethod\PizzaStore\Pizza\Pizza;
 
+/**
+ * @psalm-suppress PropertyNotSetInConstructor
+ */
 class ItalianMelanzane extends Pizza
 {
     public function __construct()

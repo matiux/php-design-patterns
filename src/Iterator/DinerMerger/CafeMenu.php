@@ -6,7 +6,8 @@ namespace DesignPatterns\Iterator\DinerMerger;
 
 class CafeMenu implements Menu
 {
-    private $menuItems = [];
+    /** @var MenuItem[] */
+    private array $menuItems = [];
 
     public function __construct()
     {
@@ -20,12 +21,15 @@ class CafeMenu implements Menu
         return new CafeMenuIterator($this->menuItems);
     }
 
-    private function addItem(string $name, string $description, bool $vegetarian, float $price)
+    private function addItem(string $name, string $description, bool $vegetarian, float $price): void
     {
         $menuItem = new MenuItem($name, $description, $vegetarian, $price);
         $this->menuItems[] = $menuItem;
     }
 
+    /**
+     * @return MenuItem[]
+     */
     public function getMenuItems(): array
     {
         return $this->menuItems;

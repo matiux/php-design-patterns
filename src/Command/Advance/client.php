@@ -34,8 +34,8 @@ $kitchenLightOff = new LightOffCommand($kitchenLight);
 $ceilingFanOn = new CeilingFanOnCommand($ceilingFan);
 $ceilingFanOff = new CeilingFanOffCommand($ceilingFan);
 
-$garageDoorUp = new GarageDoorUpCommand($garageDoor);
-$garageDoorDown = new GarageDoorDownCommand($garageDoor);
+new GarageDoorUpCommand($garageDoor);
+new GarageDoorDownCommand($garageDoor);
 
 $stereoOnWithCD = new StereoOnWithCDCommand($stereo);
 $stereoOff = new StereoOffCommand($stereo);

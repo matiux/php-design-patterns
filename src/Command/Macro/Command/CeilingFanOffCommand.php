@@ -6,10 +6,13 @@ namespace DesignPatterns\Command\Macro\Command;
 
 use DesignPatterns\Command\Macro\Receiver\CeilingFan;
 
+/**
+ * @psalm-suppress PropertyNotSetInConstructor
+ */
 class CeilingFanOffCommand implements Command
 {
-    private $ceilingFan;
-    private $prevSpeed;
+    private CeilingFan $ceilingFan;
+    private int $prevSpeed;
 
     public function __construct(CeilingFan $ceilingFan)
     {

@@ -11,9 +11,9 @@ require dirname(__DIR__).'/../vendor/autoload.php';
 
 $weatherData = new WeatherData();
 
-$currentConditionDisplay = new CurrentConditionsDisplay($weatherData);
-$statisticsDisplay = new StatisticsDisplay($weatherData);
-$forecastDisplay = new ForecastDisplay($weatherData);
+new CurrentConditionsDisplay($weatherData);
+new StatisticsDisplay($weatherData);
+new ForecastDisplay($weatherData);
 
 echo "-------------------------\n";
 $weatherData->setMeasurements(21.1, 65, 30.4);

@@ -90,7 +90,7 @@ class HomeTheaterFacade
         $this->cd->off();
     }
 
-    public function listenToRadio(string $frequency): void
+    public function listenToRadio(float $frequency): void
     {
         echo 'Tuning in the airwaves...'."\n";
 

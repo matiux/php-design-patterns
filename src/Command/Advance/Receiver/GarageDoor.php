@@ -6,7 +6,7 @@ namespace DesignPatterns\Command\Advance\Receiver;
 
 class GarageDoor
 {
-    private $location;
+    private string $location;
 
     public function __construct(string $location)
     {

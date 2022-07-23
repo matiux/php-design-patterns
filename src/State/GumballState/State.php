@@ -15,4 +15,6 @@ interface State
     public function dispense(): void;
 
     public function refill(): void;
+
+    public function __toString(): string;
 }

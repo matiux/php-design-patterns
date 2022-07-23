@@ -6,15 +6,14 @@ namespace DesignPatterns\Composite\Menu;
 
 class Waitress
 {
-    /** @var MenuComponent */
-    private $allMenus;
+    private MenuComponent $allMenus;
 
     public function __construct(MenuComponent $allMenus)
     {
         $this->allMenus = $allMenus;
     }
 
-    public function printMenu()
+    public function printMenu(): void
     {
         $this->allMenus->print();
     }
