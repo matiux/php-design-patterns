@@ -11,11 +11,11 @@ git clone git@github.com:matiux/php-design-patterns.git && cd php-design-pattern
 composer install
 ```
 
-## Lista dei pattern
+## Pattern list
 
 ### Strategy pattern
-Il pattern Strategy definisce una famiglia di algoritmi, incapsula ciascuno e li rende intercambiabili. La strategia
-consente all'algoritmo di variare in modo indipendente dai client che lo utilizzano.
+Strategy pattern defines a family of algorithms, encapsulates each and makes them interchangeable. The strategy
+allows the algorithm to vary independently of the clients that use it.
 ```
 php src/Strategy/mini-duck-simulator.php
 ```

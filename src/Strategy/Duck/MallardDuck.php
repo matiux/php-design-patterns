@@ -17,6 +17,6 @@ class MallardDuck extends Duck
 
     public function display(): void
     {
-        echo "Sono una Germano Reale!\n";
+        echo "I am a Mallard!\n";
     }
 }

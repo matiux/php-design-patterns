@@ -26,7 +26,7 @@ abstract class Duck
 
     public function swim(): void
     {
-        echo "Tutte le anatre galleggiano\n";
+        echo "All the ducks float\n";
     }
 
     public function setFlyBehavior(FlyBehavior $flyBehavior): void
