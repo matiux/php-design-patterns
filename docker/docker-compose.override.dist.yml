@@ -2,11 +2,11 @@ version: '3.7'
 
 secrets:
   id_rsa:
-    file:
+    file: ~/.ssh/id_rsa
   id_rsa.pub:
-    file:
+    file: ~/.ssh/id_rsa.pub
   known_hosts:
-    file:
+    file: ~/.ssh/known_hosts
 
 services:
 

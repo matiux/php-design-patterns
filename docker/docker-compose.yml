@@ -4,21 +4,21 @@ volumes:
   app_database: {}
 
 networks:
-  php_design_pattern_nettwork:
-    name: php_design_pattern_nettwork
+  php_design_pattern_network:
+    name: php_design_pattern_network
     driver: bridge
 
 services:
   php_design_pattern:
     build: php
-    hostname: phpdphost
+    hostname: phpdp
     volumes:
       - ../:/var/www/app:delegated
       - ./data/shell_history:/home/utente/shell_history
     environment:
       - HISTFILE=/home/utente/shell_history/.x_history
     networks:
-      - php_design_pattern_nettwork
+      - php_design_pattern_network
     secrets:
       - source: id_rsa
         target: /home/utente/.ssh/id_rsa
@@ -26,17 +26,6 @@ services:
         target: /home/utente/.ssh/id_rsa.pub
       - source: known_hosts
         target: /home/utente/.ssh/known_hosts
-
-  phpmyadmin:
-    image: phpmyadmin/phpmyadmin
-    ports:
-    - "8081:80"
-    depends_on:
-    - servicedb
-    environment:
-    - PMA_HOST=servicedb
-    networks:
-      - php_design_pattern_nettwork
 
   servicedb:
     image: mysql:5.7
@@ -49,4 +38,13 @@ services:
       - MYSQL_PASSWORD=password
       - MYSQL_DATABASE=idy
     networks:
-      - php_design_pattern_nettwork
+      - php_design_pattern_network
+
+  nodejs:
+    build: nodejs
+    working_dir: /var/www/app
+    #command: "commitlint -e --from=HEAD"
+    volumes:
+      - ../:/var/www/app
+    networks:
+      - php_design_pattern_network
