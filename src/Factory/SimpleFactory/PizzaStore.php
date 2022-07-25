@@ -8,7 +8,7 @@ use DesignPatterns\Factory\SimpleFactory\Pizza\Pizza;
 
 class PizzaStore
 {
-    private $simplePizzaFactory;
+    private SimplePizzaFactory $simplePizzaFactory;
 
     public function __construct(SimplePizzaFactory $simplePizzaFactory)
     {

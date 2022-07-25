@@ -32,9 +32,9 @@ flexible to the subclass to extend the functionality of an object.
 php src/Decorator/starbuzz-coffee.php
 ```
 ### Simple Factory pattern
-Non è un vero è proprio design pattern ma è un modo semplice per disaccoppiare il client dalle classi concrete.
+It's not a proper design pattern, but it's an easy way to decouple the client from concrete classes.
 
-Sola lettura:
+Read only:
 
 ```
 cat src/Factory/SimpleFactory/SimplePizzaFactory.php
