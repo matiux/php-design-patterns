@@ -8,7 +8,7 @@ use DesignPatterns\Command\Advance\Receiver\Stereo;
 
 class StereoOffCommand implements Command
 {
-    private $stereo;
+    private Stereo $stereo;
 
     public function __construct(Stereo $stereo)
     {

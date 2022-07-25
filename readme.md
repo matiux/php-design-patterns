@@ -58,8 +58,8 @@ Singleton Pattern ensures that a class has only one instance and provides a glob
 php src/Singleton/client.php
 ```
 ### Command pattern
-Il Command pattern incapsula una richiesta (un comando) legando insieme un insieme di azioni che devono essere eseguite
-su un destinatario (un receiver).
+Command pattern encapsulates a request (a command) by binding together a set of actions to be performed
+on a recipient (a receiver).
 ```
 php src/Command/Simple/client.php
 php src/Command/Advance/client.php

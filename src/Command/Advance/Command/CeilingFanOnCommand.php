@@ -8,7 +8,7 @@ use DesignPatterns\Command\Advance\Receiver\CeilingFan;
 
 class CeilingFanOnCommand implements Command
 {
-    private $ceilingFan;
+    private CeilingFan $ceilingFan;
 
     public function __construct(CeilingFan $ceilingFan)
     {

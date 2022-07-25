@@ -8,7 +8,7 @@ use DesignPatterns\Command\Advance\Receiver\Light;
 
 class LightOffCommand implements Command
 {
-    private $light;
+    private Light $light;
 
     public function __construct(Light $light)
     {
