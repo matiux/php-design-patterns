@@ -9,9 +9,9 @@ namespace DesignPatterns\Adapter\Anatre;
  *
  * Interface Anatra
  */
-interface Anatra
+interface Duck
 {
     public function quack(): void;
 
-    public function vola(): void;
+    public function fly(): void;
 }

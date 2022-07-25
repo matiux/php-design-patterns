@@ -9,9 +9,9 @@ namespace DesignPatterns\Adapter\Anatre;
  *
  * Interface Tacchino
  */
-interface Tacchino
+interface Turkey
 {
-    public function ingurgita(): void;
+    public function swallows(): void;
 
-    public function vola(): void;
+    public function fly(): void;
 }

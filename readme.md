@@ -67,11 +67,11 @@ php src/Command/Undo/client.php
 php src/Command/Macro/client.php
 ```
 ### Adapter pattern
-Il pattern Adapter converte l'interfaccia di una classe in un'altra che il client si aspetta. L'Adapter consente alle
-classi di lavorare insieme quando non potrebbero a causa d'interfacce incompatibili.
+Adapter pattern converts the interface of one class into another that the client expects. The Adapter allows the
+classes to work together when they could not due to incompatible interfaces.
 ```
-php src/Adapter/Anatre/client-anatra.php 
-php src/Adapter/Anatre/client-tacchino.php 
+php src/Adapter/Anatre/client-duck.php
+php src/Adapter/Anatre/client-turkey.php 
 ```
 ### Facade pattern
 Il pattern Facade fornisce un'interfaccia unificata a un insieme d'interfacce in un sottosistema. Definisce un'interfaccia
