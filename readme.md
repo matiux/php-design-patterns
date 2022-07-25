@@ -142,10 +142,11 @@ php src/State/GumballStateWinner/client.php
 ```
 
 ### Visitor pattern
-Il visitor è un pattern comportamentale che consente di separare gli algoritmi dagli oggetti su cui operano.
-Questo pattern rappresenta una operazione che si vuole eseguire su una collezione di elementi di una struttura. L'operazione può essere 
-modificata senza modificare le classi degli elementi sui quali opera. Si pensi a una struttura che contiene un insieme eterogeneo di oggetti,
-sui quali bisogna applicare la stessa operazione, che però è implementata in modo diverso per ogni classe di oggetto.
+The visitor is a behavioral pattern that allows you to separate algorithms from the objects on which they operate.
+This pattern represents an operation that you want to perform on a collection of elements of a structure. The operation
+can be modified without changing the classes of the elements on which it operates. Think of a structure that contains a
+heterogeneous set of objects, on which the same operation must be applied, which however is implemented in a different
+way for each class of object.
 
 ```
 php src/Visitor/client.php
