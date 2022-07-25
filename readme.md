@@ -155,25 +155,24 @@ php src/Visitor/client.php
 ## Extra
 
 ### Hexagonal Architecture (Ports and Adapters)
+In this section, based on the book *Domain-Driven Design in PHP - Carlos Buenosvinos, Christian Soronellas and Keyvan Akbary*,
+I show a refactoring process from spaghetti code to code reorganization through the hexagonal architecture
 
-In questa sezione, basandomi sul libro *Domain-Driven Design in PHP – Carlos Buenosvinos, Christian Soronellas and Keyvan Akbary*,
-mostro un processo di refactoring da spaghetti code a organizzazione del codice tramite l'architettura esagonale
+The hexagonal architecture allows an application to be equally driven by users, programs, automated tests or batch
+scripts and to be developed and tested separately from its own devices and databases, if any.
 
-L'architettura esagonale consente a un'applicazione di essere ugualmente guidata da utenti, programmi, test automatizzati
-o script batch e di essere sviluppata e testata separatamente dai suoi eventuali dispositivi e database.
-
-Preparare il database per far girare gli esempi
+Prepare the database for running the examples:
 ```
 php src/HexagonalArchitecture/build.php
 ```
 
-I primi 3 step di refactoring
+The first 3 steps of refactoring:
 ```
 php src/HexagonalArchitecture/Step01/client.php
 php src/HexagonalArchitecture/Step02/client.php
 php src/HexagonalArchitecture/Step03/client.php
 ```
-Step finale con implementazione con vari delivery e test
+Final step with implementation with various deliveries and tests:
 ```
 php src/HexagonalArchitecture/Step04/client.php
 php src/HexagonalArchitecture/Step04/console app:create-idea 'Flying pig' Matiux
