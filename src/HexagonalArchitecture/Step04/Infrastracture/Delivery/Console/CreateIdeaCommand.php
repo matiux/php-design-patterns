@@ -31,7 +31,7 @@ class CreateIdeaCommand extends Command
             ->addArgument('description', InputArgument::OPTIONAL, "Idea's description", '');
     }
 
-    protected function execute(InputInterface $input, OutputInterface $output): void
+    protected function execute(InputInterface $input, OutputInterface $output): int
     {
         $ideaId = $this->ideaService->execute(new CreateIdeaRequest(
             (string) $input->getArgument('title'),
@@ -40,5 +40,7 @@ class CreateIdeaCommand extends Command
         ));
 
         $output->write(sprintf("Idea created with Id %s\n", $ideaId->toString()));
+
+        return Command::FAILURE;
     }
 }
