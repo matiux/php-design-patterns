@@ -47,8 +47,8 @@ The Factory Method is based on inheritance: the creation of the object is delega
 php src/Factory/FactoryMethod/client.php
 ```
 ### Abstract Factory pattern
-L'Abstract Factory si basa sulla composizione degli oggetti: la creazione dell'oggetto è implementata in metodi esposti
-nell'interfaccia della factory.
+Abstract Factory is based on the composition of the objects: the creation of the object is implemented in exposed methods
+in the factory interface.
 ```
 php src/Factory/AbstractFactory/client.php
 ```

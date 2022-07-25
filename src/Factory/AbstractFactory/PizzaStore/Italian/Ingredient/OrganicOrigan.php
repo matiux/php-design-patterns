@@ -6,10 +6,10 @@ namespace DesignPatterns\Factory\AbstractFactory\PizzaStore\Italian\Ingredient;
 
 use DesignPatterns\Factory\AbstractFactory\PizzaStore\Ingredient\Veggie;
 
-class OriganoVeggie extends Veggie
+class OrganicOrigan extends Veggie
 {
     public function getName(): string
     {
-        return 'Origano bio';
+        return 'Organic oregano';
     }
 }

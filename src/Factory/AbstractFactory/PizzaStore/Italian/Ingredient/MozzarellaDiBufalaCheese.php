@@ -10,6 +10,6 @@ class MozzarellaDiBufalaCheese extends Cheese
 {
     public function getName(): string
     {
-        return 'Mozzarella di bufala campana';
+        return 'Buffalo mozzarella from Campania';
     }
 }

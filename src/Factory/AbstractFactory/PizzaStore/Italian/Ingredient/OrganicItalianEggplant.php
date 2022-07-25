@@ -4,12 +4,12 @@ declare(strict_types=1);
 
 namespace DesignPatterns\Factory\AbstractFactory\PizzaStore\Italian\Ingredient;
 
-use DesignPatterns\Factory\AbstractFactory\PizzaStore\Ingredient\Sauce;
+use DesignPatterns\Factory\AbstractFactory\PizzaStore\Ingredient\Eggplant;
 
-class PomodoroFrescoSauce extends Sauce
+class OrganicItalianEggplant extends Eggplant
 {
     public function getName(): string
     {
-        return 'Polpa di pomodoro fresco bio';
+        return 'Organic eggplant';
     }
 }

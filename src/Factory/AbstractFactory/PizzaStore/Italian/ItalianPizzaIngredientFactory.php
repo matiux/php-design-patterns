@@ -11,23 +11,23 @@ use DesignPatterns\Factory\AbstractFactory\PizzaStore\Ingredient\Eggplant;
 use DesignPatterns\Factory\AbstractFactory\PizzaStore\Ingredient\PizzaIngredientFactory;
 use DesignPatterns\Factory\AbstractFactory\PizzaStore\Ingredient\Sauce;
 use DesignPatterns\Factory\AbstractFactory\PizzaStore\Ingredient\Veggie;
-use DesignPatterns\Factory\AbstractFactory\PizzaStore\Italian\Ingredient\BasilicoVeggie;
-use DesignPatterns\Factory\AbstractFactory\PizzaStore\Italian\Ingredient\IntegraleDough;
-use DesignPatterns\Factory\AbstractFactory\PizzaStore\Italian\Ingredient\ItalianMelanzanaBio;
+use DesignPatterns\Factory\AbstractFactory\PizzaStore\Italian\Ingredient\OrganicBasil;
+use DesignPatterns\Factory\AbstractFactory\PizzaStore\Italian\Ingredient\WholemealDough;
+use DesignPatterns\Factory\AbstractFactory\PizzaStore\Italian\Ingredient\OrganicItalianEggplant;
 use DesignPatterns\Factory\AbstractFactory\PizzaStore\Italian\Ingredient\MozzarellaDiBufalaCheese;
-use DesignPatterns\Factory\AbstractFactory\PizzaStore\Italian\Ingredient\OriganoVeggie;
-use DesignPatterns\Factory\AbstractFactory\PizzaStore\Italian\Ingredient\PomodoroFrescoSauce;
+use DesignPatterns\Factory\AbstractFactory\PizzaStore\Italian\Ingredient\OrganicOrigan;
+use DesignPatterns\Factory\AbstractFactory\PizzaStore\Italian\Ingredient\FreshTomatoSauce;
 
 class ItalianPizzaIngredientFactory implements PizzaIngredientFactory
 {
     public function createDough(): Dough
     {
-        return new IntegraleDough();
+        return new WholemealDough();
     }
 
     public function createSauce(): Sauce
     {
-        return new PomodoroFrescoSauce();
+        return new FreshTomatoSauce();
     }
 
     public function createCheese(): Cheese
@@ -42,14 +42,14 @@ class ItalianPizzaIngredientFactory implements PizzaIngredientFactory
     {
         /** @var ArrayObject<int, Veggie> $veggies */
         $veggies = new ArrayObject();
-        $veggies->append(new OriganoVeggie());
-        $veggies->append(new BasilicoVeggie());
+        $veggies->append(new OrganicOrigan());
+        $veggies->append(new OrganicBasil());
 
         return $veggies;
     }
 
     public function createEggplant(): Eggplant
     {
-        return new ItalianMelanzanaBio();
+        return new OrganicItalianEggplant();
     }
 }

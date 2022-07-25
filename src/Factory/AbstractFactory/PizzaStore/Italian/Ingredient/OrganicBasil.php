@@ -4,12 +4,12 @@ declare(strict_types=1);
 
 namespace DesignPatterns\Factory\AbstractFactory\PizzaStore\Italian\Ingredient;
 
-use DesignPatterns\Factory\AbstractFactory\PizzaStore\Ingredient\Dough;
+use DesignPatterns\Factory\AbstractFactory\PizzaStore\Ingredient\Veggie;
 
-class IntegraleDough extends Dough
+class OrganicBasil extends Veggie
 {
     public function getName(): string
     {
-        return 'Impasto integrale';
+        return 'Organic basil';
     }
 }

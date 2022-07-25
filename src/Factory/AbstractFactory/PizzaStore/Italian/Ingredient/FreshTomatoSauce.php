@@ -4,12 +4,12 @@ declare(strict_types=1);
 
 namespace DesignPatterns\Factory\AbstractFactory\PizzaStore\Italian\Ingredient;
 
-use DesignPatterns\Factory\AbstractFactory\PizzaStore\Ingredient\Eggplant;
+use DesignPatterns\Factory\AbstractFactory\PizzaStore\Ingredient\Sauce;
 
-class ItalianMelanzanaBio extends Eggplant
+class FreshTomatoSauce extends Sauce
 {
     public function getName(): string
     {
-        return 'Melanzana bio';
+        return 'Fresh tomato sauce';
     }
 }

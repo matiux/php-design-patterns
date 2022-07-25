@@ -13,8 +13,8 @@ class ItalianMargherita extends Pizza
 {
     public function prepare(): void
     {
-        echo "Preparo la pizza {$this->name}\n";
-        echo "Preparo gli ingredienti:\n";
+        echo "I prepare the pizza {$this->name}\n";
+        echo "I prepare the ingredients:\n";
 
         $this->dough = $this->pizzaIngredientFactory->createDough();
         $this->sauce = $this->pizzaIngredientFactory->createSauce();
