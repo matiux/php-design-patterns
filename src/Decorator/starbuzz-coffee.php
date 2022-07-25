@@ -7,28 +7,28 @@ require dirname(__DIR__).'/../vendor/autoload.php';
 use DesignPatterns\Decorator\Beverage\Beverage;
 use DesignPatterns\Decorator\Beverage\Cappuccino;
 use DesignPatterns\Decorator\Beverage\Espresso;
-use DesignPatterns\Decorator\Condiment\ConCacao;
-use DesignPatterns\Decorator\Condiment\Schiumato;
+use DesignPatterns\Decorator\Condiment\WithCocoa;
+use DesignPatterns\Decorator\Condiment\Macchiato;
 use DesignPatterns\Decorator\Condiment\SoyMilk;
 
 $cappuccino = new Cappuccino();
-$cappuccino->setSize(Beverage::GRANDE);
-$cappuccino = new ConCacao($cappuccino);
+$cappuccino->setSize(Beverage::BIG);
+$cappuccino = new WithCocoa($cappuccino);
 printBeverage($cappuccino);
 
 $cappuccino2 = new Cappuccino();
-$cappuccino2->setSize(Beverage::PICCOLO);
+$cappuccino2->setSize(Beverage::SMALL);
 $cappuccino2 = new SoyMilk($cappuccino2);
 printBeverage($cappuccino2);
 
 $espresso = new Espresso();
-$espresso->setSize(Beverage::MEDIO);
-$espresso = new Schiumato($espresso);
-$espresso = new ConCacao($espresso);
+$espresso->setSize(Beverage::MEDIUM);
+$espresso = new Macchiato($espresso);
+$espresso = new WithCocoa($espresso);
 printBeverage($espresso);
 
 $espresso = new Espresso();
-$espresso->setSize(Beverage::PICCOLO);
+$espresso->setSize(Beverage::SMALL);
 printBeverage($espresso);
 
 function printBeverage(Beverage $beverage): void
@@ -36,16 +36,16 @@ function printBeverage(Beverage $beverage): void
     $size = '';
 
     switch ($beverage->getSize()) {
-        case Beverage::PICCOLO:
-            $size = 'Piccolo';
+        case Beverage::SMALL:
+            $size = 'Small';
 
             break;
-        case Beverage::MEDIO:
-            $size = 'Medio';
+        case Beverage::MEDIUM:
+            $size = 'Medium';
 
             break;
-        case Beverage::GRANDE:
-            $size = 'Grande';
+        case Beverage::BIG:
+            $size = 'Big';
 
             break;
     }

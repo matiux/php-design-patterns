@@ -13,15 +13,15 @@ class SoyMilk extends CondimentDecorator
         $cost = $this->beverage->cost();
 
         switch ($this->beverage->size) {
-            case Beverage::PICCOLO:
+            case Beverage::SMALL:
                 $cost += 0.25;
 
                 break;
-            case Beverage::MEDIO:
+            case Beverage::MEDIUM:
                 $cost += 0.5;
 
                 break;
-            case Beverage::GRANDE:
+            case Beverage::BIG:
                 $cost += 0.75;
 
                 break;
@@ -32,6 +32,6 @@ class SoyMilk extends CondimentDecorator
 
     protected function setDescription(): void
     {
-        $this->condimentDescription = 'con latte di soia';
+        $this->condimentDescription = 'with soy milk';
     }
 }

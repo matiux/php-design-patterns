@@ -6,22 +6,22 @@ namespace DesignPatterns\Decorator\Condiment;
 
 use DesignPatterns\Decorator\Beverage\Beverage;
 
-class Schiumato extends CondimentDecorator
+class WithCocoa extends CondimentDecorator
 {
     public function cost(): float
     {
         $cost = $this->beverage->cost();
 
         switch ($this->beverage->size) {
-            case Beverage::PICCOLO:
+            case Beverage::SMALL:
                 $cost += 0;
 
                 break;
-            case Beverage::MEDIO:
+            case Beverage::MEDIUM:
                 $cost += 0.15;
 
                 break;
-            case Beverage::GRANDE:
+            case Beverage::BIG:
                 $cost += 0.20;
 
                 break;
@@ -32,6 +32,6 @@ class Schiumato extends CondimentDecorator
 
     protected function setDescription(): void
     {
-        $this->condimentDescription = 'schiumato';
+        $this->condimentDescription = 'with cocoa';
     }
 }

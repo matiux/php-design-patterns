@@ -26,8 +26,8 @@ tutti i suoi dipendenti vengono notificati e aggiornati automaticamente.
 php src/Observer/weather-station.php
 ```
 ### Decorator pattern
-Il pattern Decorator associa responsabilità aggiuntive a un oggetto in modo dinamico. I decoratori offrono un'alternativa
-flessibile alla sottoclasse per estendere le funzionalità di un oggetto.
+Decorator pattern associates additional responsibilities with an object in a dynamic way. Decorators offer an alternative
+flexible to the subclass to extend the functionality of an object.
 ```
 php src/Decorator/starbuzz-coffee.php
 ```

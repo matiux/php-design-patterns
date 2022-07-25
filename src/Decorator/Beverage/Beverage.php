@@ -6,13 +6,13 @@ namespace DesignPatterns\Decorator\Beverage;
 
 abstract class Beverage
 {
-    public const PICCOLO = 0;
-    public const MEDIO = 1;
-    public const GRANDE = 2;
+    public const SMALL = 0;
+    public const MEDIUM = 1;
+    public const BIG = 2;
 
-    protected string $description = 'Bevanda non definita';
+    protected string $description = 'Undefined beverage';
 
-    protected int $size = self::PICCOLO;
+    protected int $size = self::SMALL;
 
     public function getDescription(): string
     {

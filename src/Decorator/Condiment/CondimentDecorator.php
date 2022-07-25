@@ -9,7 +9,7 @@ use DesignPatterns\Decorator\Beverage\Beverage;
 abstract class CondimentDecorator extends Beverage
 {
     protected Beverage $beverage;
-    protected string $condimentDescription = 'Condimento sconosciuto';
+    protected string $condimentDescription = 'Unknown condiment';
 
     public function __construct(Beverage $beverage)
     {
