@@ -105,22 +105,6 @@ php src/Iterator/DinerMerger/client.php
 php src/Iterator/DinerMergerI/client.php
 ```
 ### Composite pattern
-Il pattern Composite consente di comporre oggetti in strutture ad albero per rappresentare gerarchie intere. Il pattern
-Composite consente ai client di trattare in modo uniforme singoli oggetti e composizioni di oggetti. Usando una struttura
-composita, possiamo applicare le stesse operazioni sia sui dati compositi che su singoli oggetti. In altre parole, nella
-maggior parte dei casi possiamo ignorare le differenze tra le composizioni di oggetti e oggetti individuali. Con questo
-pattern sembra che il principio di singola responsabilità venga violato in quanto una classe che lo implementa si trova
-a fare due cose, gestire una gerarchia e gestire operazioni sui nodi finali (le foglie dell'albero). Possiamo tuttavia
-dire che il pattern Composite prende il design del SRP e lo scambia per _trasparenza_; consentendo all'interfaccia
-Component di contenere le operazioni di gestione figlio e le operazioni foglia, un client può trattare uniformemente sia
-i dati compositi che i nodi foglia; quindi, se un elemento è un nodo composito o foglia diventa trasparente per il client.
-Consentendo all'interfaccia Component di contenere le operazioni di gestione figlio e le operazioni foglia, un client può
-trattare uniformemente sia i compositi che i nodi foglia; quindi, se un elemento è un nodo composito o foglia diventa
-trasparente per il client. Questo è un classico caso di compromesso. A volte facciamo intenzionalmente le cose in un modo
-che sembra violare il principio. In alcuni casi, tuttavia, questa è una questione di prospettiva; per esempio, potrebbe
-sembrare sbagliato avere operazioni di gestione figli nei nodi foglia (come _add()_, _remove()_ e _getChild()_), ma poi
-puoi sempre cambiare prospettiva e vedere una foglia come un nodo con zero figli.
-
 Composite pattern allows you to compose objects in tree structures to represent entire hierarchies. Composite pattern
 allows clients to treat single objects and object compositions uniformly. Using a structure
 composite, we can apply the same operations to both composite data and individual objects. In other words, in the
@@ -134,7 +118,7 @@ By allowing the Component interface to contain child management operations and l
 treat both composites and leaf nodes uniformly; so if an element is a composite or leaf node it becomes
 transparent to the client. This is a classic case of compromise. Sometimes we intentionally do things one way
 which seems to violate the principle. In some cases, however, this is a matter of perspective; for example, it might
-seem wrong to have child management operations in leaf nodes (like _add () _, _remove () _ and _getChild () _), but then
+seem wrong to have child management operations in leaf nodes (like _add()_, _remove()_ and _getChild()_), but then
 you can always change perspective and see a leaf as a node with zero children.
 
 ```
@@ -142,15 +126,16 @@ php src/Composite/Menu/client.php
 ```
 
 ### State pattern
-Il pattern State consente a un oggetto di alterarne il comportamento quando cambia lo stato interno. L'oggetto sembrerà cambiare la sua classe.
-Poiché il pattern incapsula lo stato in classi separate e delega all'oggetto che rappresenta lo stato corrente, sappiamo che il comportamento
-cambia insieme allo stato interno. Con il pattern State, abbiamo un insieme di comportamenti incapsulati in oggetti di stato; in qualsiasi momento
-il contesto sta delegando a uno di questi stati. Nel tempo, lo stato corrente cambia attraverso l'insieme di oggetti di stato per riflettere lo
-stato interno del contesto, quindi anche il comportamento del contesto cambia nel tempo. A livello di diagramma questo pattern è identico al
-Pattern Strategy. In generale, pensa allo Strategy come un'alternativa flessibile alla sottoclasse; se usi l'ereditarietà per definire il comportamento
-di una classe, allora sei bloccato con quel comportamento anche se hai bisogno di cambiarlo. Con lo Strategy puoi cambiare il comportamento componendo
-con un oggetto diverso. Il pattern State invece va pensato come alternativa al mettere molte condizionali nel tuo contesto; incapsulando i comportamenti
-all'interno degli oggetti di stato, puoi semplicemente cambiare l'oggetto stato nel contesto per cambiarne il comportamento.
+State pattern allows an object to alter its behavior when its internal state changes. The object will appear to change its class.
+Since the pattern encapsulates the state in separate classes and delegates to the object representing the current state, we know
+that behavior changes along with the internal state. With the State pattern, we have a set of behaviors encapsulated in state objects;
+at any time the context is delegating to one of these states. Over time, the current state changes across the set of
+state objects to reflect it internal state of the context, so the behavior of the context also changes over time.
+At the level of the diagram this pattern is identical to the Pattern Strategy. In general, think of the Strategy as a
+flexible alternative to the subclass; if you use inheritance to define behavior of a class, then you are stuck with that
+behavior even if you need to change it. With the Strategy you can change the behavior by composing with a different object.
+The State pattern, on the other hand, should be thought of as an alternative to putting many conditionals in your context;
+encapsulating behaviors within state objects, you can simply change the state object in context to change its behavior.
 ```
 php src/State/GumballState/client.php
 php src/State/GumballStateWinner/client.php
