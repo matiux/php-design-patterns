@@ -74,10 +74,10 @@ php src/Adapter/Anatre/client-duck.php
 php src/Adapter/Anatre/client-turkey.php 
 ```
 ### Facade pattern
-Il pattern Facade fornisce un'interfaccia unificata a un insieme d'interfacce in un sottosistema. Definisce un'interfaccia
-di livello superiore che semplifica l'utilizzo del sottosistema. La differenza tra Facade e Adapter è nel loro intento.
-L'intento del pattern Adapter è di modificare un'interfaccia in modo che corrisponda a quella che un client si aspetta.
-L'intento del pattern Facade è di fornire un'interfaccia semplificata a un sottosistema.
+Facade pattern provides a unified interface to a set of interfaces in a subsystem. Defines a higher level interface
+which simplifies the use of the subsystem. The difference between Facade and Adapter is in their intent.
+The intent of the Adapter pattern is to modify an interface to match what a client expects.
+The intent of the Facade pattern is to provide a simplified interface to a subsystem.
 ```
 php src/Facade/client.php
 ```
