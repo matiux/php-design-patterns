@@ -82,9 +82,8 @@ The intent of the Facade pattern is to provide a simplified interface to a subsy
 php src/Facade/client.php
 ```
 ### Template method pattern
-Il pattern Template Method definisce lo scheletro di un algoritmo in un metodo, delegando alcuni passaggi alle sottoclassi.
-Il pattern Template Method consente alle sottoclassi di ridefinire determinati passaggi di un algoritmo senza modificarne
-la struttura.  
+Template Method pattern defines the skeleton of an algorithm in a method, delegating some steps to the subclasses.
+Template Method pattern allows subclasses to redefine certain steps of an algorithm without modifying any  structure.
 ```
 php src/TemplateMethod/NoHook/client.php
 php src/TemplateMethod/Hook/client.php

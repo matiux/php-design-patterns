@@ -9,8 +9,8 @@ use DesignPatterns\TemplateMethod\Hook\Tea;
 
 echo '---------------'."\n";
 $caffe = new Caffe();
-$caffe->preparaBevanda();
+$caffe->prepareBeverage();
 echo '---------------'."\n";
 $tea = new Tea();
-$tea->preparaBevanda();
+$tea->prepareBeverage();
 echo '---------------'."\n";

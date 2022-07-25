@@ -4,15 +4,15 @@ declare(strict_types=1);
 
 namespace DesignPatterns\TemplateMethod\Hook;
 
-class Tea extends BevandaAllaCaffeina
+class Tea extends CaffeineBeverage
 {
-    protected function miscela(): void
+    protected function blend(): void
     {
-        echo 'Faccio macerare il Tea'."\n";
+        echo 'I macerate the tea'."\n";
     }
 
-    protected function aggiungiCondimenti(): void
+    protected function addCondiments(): void
     {
-        echo 'Aggiungo zucchero e limone'."\n";
+        echo 'I add sugar and lemon'."\n";
     }
 }

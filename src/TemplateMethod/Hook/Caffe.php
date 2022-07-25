@@ -4,24 +4,24 @@ declare(strict_types=1);
 
 namespace DesignPatterns\TemplateMethod\Hook;
 
-class Caffe extends BevandaAllaCaffeina
+class Caffe extends CaffeineBeverage
 {
-    protected function miscela(): void
+    protected function blend(): void
     {
-        echo 'Preparare il caffè'."\n";
+        echo 'Prepare the coffee'."\n";
     }
 
-    protected function aggiungiCondimenti(): void
+    protected function addCondiments(): void
     {
-        echo 'Aggiungo il latte'."\n";
+        echo 'I add the milk'."\n";
     }
 
-    protected function clienteVuoleCondimenti(): bool
+    protected function customerWantsCondiments(): bool
     {
-        return $this->condimentoNecessario();
+        return $this->condimentNeeded();
     }
 
-    private function condimentoNecessario(): bool
+    private function condimentNeeded(): bool
     {
         /**
          * In qualche modo determino se il cliente vuole o no il condimento.
