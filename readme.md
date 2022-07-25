@@ -120,6 +120,23 @@ trasparente per il client. Questo è un classico caso di compromesso. A volte fa
 che sembra violare il principio. In alcuni casi, tuttavia, questa è una questione di prospettiva; per esempio, potrebbe
 sembrare sbagliato avere operazioni di gestione figli nei nodi foglia (come _add()_, _remove()_ e _getChild()_), ma poi
 puoi sempre cambiare prospettiva e vedere una foglia come un nodo con zero figli.
+
+Composite pattern allows you to compose objects in tree structures to represent entire hierarchies. Composite pattern
+allows clients to treat single objects and object compositions uniformly. Using a structure
+composite, we can apply the same operations to both composite data and individual objects. In other words, in the
+most of the cases we can ignore the differences between the compositions of objects and individual objects. With this
+pattern it seems that the principle of single responsibility is violated as a class that implements it is found
+to do two things, manage a hierarchy and manage operations on the end nodes (the leaves of the tree). We can however
+to say that the Composite pattern takes the design of the SRP and mistakes it for _transparency_; allowing the interface
+Component to contain child management operations and leaf operations, a client can treat both uniformly
+the composite data that the leaf nodes; therefore, if an element is a composite or leaf node it becomes transparent to the client.
+By allowing the Component interface to contain child management operations and leaf operations, a client can
+treat both composites and leaf nodes uniformly; so if an element is a composite or leaf node it becomes
+transparent to the client. This is a classic case of compromise. Sometimes we intentionally do things one way
+which seems to violate the principle. In some cases, however, this is a matter of perspective; for example, it might
+seem wrong to have child management operations in leaf nodes (like _add () _, _remove () _ and _getChild () _), but then
+you can always change perspective and see a leaf as a node with zero children.
+
 ```
 php src/Composite/Menu/client.php
 ```

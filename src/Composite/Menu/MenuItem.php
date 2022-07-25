@@ -6,10 +6,10 @@ namespace DesignPatterns\Composite\Menu;
 
 class MenuItem extends MenuComponent
 {
-    private $name;
-    private $description;
-    private $vegetarian;
-    private $price;
+    private string $name;
+    private string $description;
+    private bool $vegetarian;
+    private float $price;
 
     public function __construct(string $name, string $description, bool $vegetarian, float $price)
     {
