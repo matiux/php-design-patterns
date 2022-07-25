@@ -20,8 +20,8 @@ allows the algorithm to vary independently of the clients that use it.
 php src/Strategy/mini-duck-simulator.php
 ```
 ### Observer pattern
-Il pattern Observer definisce una dipendenza uno-a-molti tra gli oggetti in modo che quando un oggetto cambia stato,
-tutti i suoi dipendenti vengono notificati e aggiornati automaticamente.
+Observer pattern defines a one-to-many dependency between objects so that when an object changes state,
+all its employees are notified and updated automatically.
 ```
 php src/Observer/weather-station.php
 ```
