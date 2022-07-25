@@ -15,10 +15,10 @@ class ItalianMelanzane extends Pizza
     {
         parent::__construct();
 
-        $this->name = 'Margherita italiana';
-        $this->dough = 'Impasto integrale';
-        $this->sauce = 'Passata di pomodoro Bio';
-        $this->cheese = 'Mozzarella';
-        $this->veggies->append('Melanzane');
+        $this->name = 'Pizza with eggplant';
+        $this->dough = 'Wholemeal dough';
+        $this->sauce = 'Organic tomato sauce';
+        $this->cheese = 'Mozzarella cheese';
+        $this->veggies->append('Eggplant');
     }
 }

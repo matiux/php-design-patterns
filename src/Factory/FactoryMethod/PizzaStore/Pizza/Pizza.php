@@ -12,7 +12,7 @@ use ArrayObject;
 abstract class Pizza
 {
     protected string $name;
-    protected string $dough; // Impasto
+    protected string $dough;
     /** @var ArrayObject<int, string> */
     protected ArrayObject $veggies;
     protected string $cheese;
@@ -27,10 +27,10 @@ abstract class Pizza
 
     public function prepare(): void
     {
-        echo "Preparo la pizza {$this->name}\n";
-        echo "Stendo l'impasto {$this->dough}\n";
-        echo "Aggiungo la salsa {$this->sauce}\n";
-        echo "Aggiungo le verdure:\n";
+        echo "Preparing the pizza {$this->name}\n";
+        echo "Rolling out the dough {$this->dough}\n";
+        echo "Adding the sauce {$this->sauce}\n";
+        echo "Adding the vegetables:\n";
 
         foreach ($this->veggies as $veggie) {
             echo "\t{$veggie}\n";
@@ -39,17 +39,17 @@ abstract class Pizza
 
     public function bake(): void
     {
-        echo "Cuocio la pizza per 25 minuti a 200 gradi\n";
+        echo "I bake the pizza for 25 minutes at 200 degrees\n";
     }
 
     public function cut(): void
     {
-        echo "Taglio la pizza a fette\n";
+        echo "I cut the pizza into slices\n";
     }
 
     public function box(): void
     {
-        echo "Inscatolo la pizza\n";
+        echo "I can box the pizza\n";
     }
 
     public function name(): string

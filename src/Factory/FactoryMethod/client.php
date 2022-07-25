@@ -17,4 +17,4 @@ use DesignPatterns\Factory\FactoryMethod\PizzaStore\Italian\ItalianStylePizzaSto
 $pizzaStore = new ItalianStylePizzaStore();
 
 $pizzaStore->orderPizza('margherita');
-$pizzaStore->orderPizza('melanzane');
+$pizzaStore->orderPizza('eggplant');

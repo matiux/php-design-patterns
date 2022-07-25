@@ -41,8 +41,8 @@ cat src/Factory/SimpleFactory/SimplePizzaFactory.php
 cat src/Factory/SimpleFactory/PizzaStore.php
 ```
 ### Factory Method pattern
-Il Factory Method si basa sull'ereditarietà: la creazione dell'oggetto è delegata a sottoclassi, che implementano il
-metodo "factory" per creare oggetti.
+The Factory Method is based on inheritance: the creation of the object is delegated to subclasses, which implement the
+"factory" method to create objects.
 ```
 php src/Factory/FactoryMethod/client.php
 ```

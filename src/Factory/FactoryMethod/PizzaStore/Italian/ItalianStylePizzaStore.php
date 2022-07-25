@@ -20,7 +20,7 @@ class ItalianStylePizzaStore extends PizzaStore
         switch ($type) {
             case 'margherita':
                 return new ItalianMargherita();
-            case 'melanzane':
+            case 'eggplant':
                 return new ItalianMelanzane();
             default:
                 throw new InvalidArgumentException();

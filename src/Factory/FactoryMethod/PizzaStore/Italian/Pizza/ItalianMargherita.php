@@ -15,11 +15,11 @@ class ItalianMargherita extends Pizza
     {
         parent::__construct();
 
-        $this->name = 'Margherita italiana';
-        $this->dough = 'Impasto integrale';
-        $this->sauce = 'Passata di pomodoro Bio';
-        $this->cheese = 'Mozzarella di bufala campana';
-        $this->veggies->append('Origano');
-        $this->veggies->append('Basilico');
+        $this->name = 'Italian Margherita';
+        $this->dough = 'Wholemeal dough';
+        $this->sauce = 'Organic tomato sauce';
+        $this->cheese = 'Buffalo mozzarella from Campania';
+        $this->veggies->append('Origan');
+        $this->veggies->append('Basil');
     }
 }
