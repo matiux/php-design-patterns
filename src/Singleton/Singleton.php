@@ -9,8 +9,8 @@ class Singleton
     private static ?self $instance = null;
 
     /**
-     * Rendiamo iil costruttore privato al fine di prevenire la creazione di una nuova istanza
-     * della classe in questione attraverso l'operatore `new` al di fuori della classe.
+     * Let's make the constructor private in order to prevent the creation of a new instance of the class in question
+     * via the `new` operator outside the class.
      */
     protected function __construct()
     {
@@ -26,7 +26,7 @@ class Singleton
     }
 
     /**
-     * Rendiamo il metodo __clone() provate al fine di evitare la clonazione dell'istanza.
+     * Let's make the __clone () method tried in order to avoid cloning the instance.
      */
     private function __clone()
     {
@@ -34,6 +34,6 @@ class Singleton
 
     public function method(): void
     {
-        echo 'Faccio qualcosa'."\n";
+        echo 'I do something'."\n";
     }
 }

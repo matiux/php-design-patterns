@@ -53,7 +53,7 @@ in the factory interface.
 php src/Factory/AbstractFactory/client.php
 ```
 ### Singleton pattern
-Il Pattern Singleton garantisce che una classe abbia una sola istanza e fornisce un punto di accesso globale a essa.
+Singleton Pattern ensures that a class has only one instance and provides a global access point to it.
 ```
 php src/Singleton/client.php
 ```
