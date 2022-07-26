@@ -1,6 +1,7 @@
 {
   "name": "matiux/php-design-patterns",
-  "license": "",
+  "description": "PHP design pattern based on the book \"Head First Design Patterns\" and more.",
+  "license": "MIT",
   "autoload": {
     "psr-4": {
       "DesignPatterns\\": "src/"

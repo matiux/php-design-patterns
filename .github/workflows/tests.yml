@@ -1,0 +1,52 @@
+name: "Test"
+
+on:
+  pull_request: ~
+  workflow_dispatch: ~
+  push:
+    branches:
+      - master
+
+jobs:
+  tests:
+    name: Run tests
+    env:
+      DB_HOST: 127.0.0.1
+      DB_USER: user
+      DB_PASSWORD: password
+      DB_NAME: idy
+      DB_PORT: 32574
+    runs-on: "ubuntu-latest"
+
+    services:
+      servicedb:
+        image: mariadb:10.3.22
+        env:
+          MYSQL_ROOT_PASSWORD: root
+          MYSQL_USER: user
+          MYSQL_PASSWORD: password
+          MYSQL_DATABASE: idy
+        ports:
+          - 32574:3306
+        options: --health-cmd="mysqladmin ping" --health-interval=10s --health-timeout=5s --health-retries=3
+
+    steps:
+      - name: Verify MySQL connection from container
+        run: mysql --host 127.0.0.1 --port 32574 -uuser -ppassword -e "SHOW DATABASES"
+
+      - name: Setup PHP
+        uses: shivammathur/setup-php@v2
+        with:
+          php-version: '7.4'
+
+      - name: Checkout code
+        uses: "actions/checkout@v2"
+
+      - name: Install dependencies
+        run: ./tools/bin/project install_dependencies
+
+      - name: Create Schema
+        run: php ./src/HexagonalArchitecture/build.php
+
+      - name: "Run unit tests (PHPUnit)"
+        run: ./tools/bin/project phpunit

@@ -7,9 +7,9 @@ require dirname(__DIR__).'/../vendor/autoload.php';
 use DesignPatterns\Decorator\Beverage\Beverage;
 use DesignPatterns\Decorator\Beverage\Cappuccino;
 use DesignPatterns\Decorator\Beverage\Espresso;
-use DesignPatterns\Decorator\Condiment\WithCocoa;
 use DesignPatterns\Decorator\Condiment\Macchiato;
 use DesignPatterns\Decorator\Condiment\SoyMilk;
+use DesignPatterns\Decorator\Condiment\WithCocoa;
 
 $cappuccino = new Cappuccino();
 $cappuccino->setSize(Beverage::BIG);

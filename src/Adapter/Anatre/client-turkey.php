@@ -18,7 +18,7 @@ $mallard = new Mallard();
 $duckAdapter = new DuckAdapter($mallard);
 
 for ($i = 0; $i < 10; ++$i) {
-    echo "The duck adapter says:"."\n";
+    echo 'The duck adapter says:'."\n";
     $duckAdapter->swallows();
     $duckAdapter->fly();
 }

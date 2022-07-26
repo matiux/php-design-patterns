@@ -27,12 +27,12 @@ $wildTurkey->fly();
 
 echo '---------'."\n";
 
-echo "The duck says:"."\n";
+echo 'The duck says:'."\n";
 runDuck($mallard);
 
 echo '---------'."\n";
 
-echo "The turkey adapter says:"."\n";
+echo 'The turkey adapter says:'."\n";
 runDuck($turkeyAdapter);
 
 echo '---------'."\n";

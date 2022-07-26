@@ -4,8 +4,8 @@ declare(strict_types=1);
 
 namespace DesignPatterns\Factory\AbstractFactory\PizzaStore\Italian;
 
-use DesignPatterns\Factory\AbstractFactory\PizzaStore\Italian\Pizza\ItalianMargherita;
 use DesignPatterns\Factory\AbstractFactory\PizzaStore\Italian\Pizza\ItalianEggplant;
+use DesignPatterns\Factory\AbstractFactory\PizzaStore\Italian\Pizza\ItalianMargherita;
 use DesignPatterns\Factory\AbstractFactory\PizzaStore\Pizza\Pizza;
 use DesignPatterns\Factory\AbstractFactory\PizzaStore\Pizza\PizzaStore;
 use InvalidArgumentException;

@@ -17,6 +17,10 @@ services:
       - ./data/shell_history:/home/utente/shell_history
     environment:
       - HISTFILE=/home/utente/shell_history/.x_history
+      - DB_HOST=servicedb
+      - DB_USER=user
+      - DB_PASSWORD=password
+      - DB_NAME=idy
     networks:
       - php_design_pattern_network
     secrets:
@@ -28,12 +32,11 @@ services:
         target: /home/utente/.ssh/known_hosts
 
   servicedb:
-    image: mysql:5.7
+    image: mariadb:10.3.22
     volumes:
       - app_database:/var/lib/mysql
-    command: mysqld --sql_mode=""
     environment:
-      - MYSQL_ROOT_PASSWORD=rootpassword
+      - MYSQL_ROOT_PASSWORD=root
       - MYSQL_USER=user
       - MYSQL_PASSWORD=password
       - MYSQL_DATABASE=idy

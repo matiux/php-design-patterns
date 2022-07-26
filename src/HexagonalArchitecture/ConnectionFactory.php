@@ -11,20 +11,24 @@ use Exception;
 
 class ConnectionFactory
 {
-    private static array $connectionParams = [
-        'dbname' => 'idy',
-        'user' => 'user',
-        'password' => 'password',
-        'host' => 'servicedb',
-        'driver' => 'pdo_mysql',
-    ];
+    private static array $connectionParams = [];
 
     protected function __construct()
     {
+
     }
 
     public static function create(): Connection
     {
+        self::$connectionParams = [
+            'dbname' => getenv('DB_NAME'),
+            'user' => getenv('DB_USER'),
+            'password' => getenv('DB_PASSWORD'),
+            'host' => getenv('DB_HOST'),
+            'port' => getenv('DB_PORT'),
+            'driver' => 'pdo_mysql',
+        ];
+
         /** @psalm-suppress MixedArgumentTypeCoercion */
         return DriverManager::getConnection(static::$connectionParams, new Configuration());
     }

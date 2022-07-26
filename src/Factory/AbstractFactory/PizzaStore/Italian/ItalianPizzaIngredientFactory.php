@@ -11,12 +11,12 @@ use DesignPatterns\Factory\AbstractFactory\PizzaStore\Ingredient\Eggplant;
 use DesignPatterns\Factory\AbstractFactory\PizzaStore\Ingredient\PizzaIngredientFactory;
 use DesignPatterns\Factory\AbstractFactory\PizzaStore\Ingredient\Sauce;
 use DesignPatterns\Factory\AbstractFactory\PizzaStore\Ingredient\Veggie;
-use DesignPatterns\Factory\AbstractFactory\PizzaStore\Italian\Ingredient\OrganicBasil;
-use DesignPatterns\Factory\AbstractFactory\PizzaStore\Italian\Ingredient\WholemealDough;
-use DesignPatterns\Factory\AbstractFactory\PizzaStore\Italian\Ingredient\OrganicItalianEggplant;
-use DesignPatterns\Factory\AbstractFactory\PizzaStore\Italian\Ingredient\MozzarellaDiBufalaCheese;
-use DesignPatterns\Factory\AbstractFactory\PizzaStore\Italian\Ingredient\OrganicOrigan;
 use DesignPatterns\Factory\AbstractFactory\PizzaStore\Italian\Ingredient\FreshTomatoSauce;
+use DesignPatterns\Factory\AbstractFactory\PizzaStore\Italian\Ingredient\MozzarellaDiBufalaCheese;
+use DesignPatterns\Factory\AbstractFactory\PizzaStore\Italian\Ingredient\OrganicBasil;
+use DesignPatterns\Factory\AbstractFactory\PizzaStore\Italian\Ingredient\OrganicItalianEggplant;
+use DesignPatterns\Factory\AbstractFactory\PizzaStore\Italian\Ingredient\OrganicOrigan;
+use DesignPatterns\Factory\AbstractFactory\PizzaStore\Italian\Ingredient\WholemealDough;
 
 class ItalianPizzaIngredientFactory implements PizzaIngredientFactory
 {

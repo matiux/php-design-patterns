@@ -1,6 +1,15 @@
-# PHP Design Patterns
+PHP Design Patterns
+========
 
-Based on the book "Head First Design Patterns"
+![check dependencies](https://github.com/matiux/php-design-patterns/actions/workflows/check-dependencies.yml/badge.svg)
+![check deps vulnerability](https://github.com/matiux/ddd-starter-pack/actions/workflows/dependencies-vulnerability.yml/badge.svg)
+![test](https://github.com/matiux/php-design-patterns/actions/workflows/tests.yml/badge.svg)
+[![type coverage](https://shepherd.dev/github/matiux/php-design-patterns/coverage.svg)](https://shepherd.dev/github/matiux/php-design-patterns)
+[![psalm level](https://shepherd.dev/github/matiux/php-design-patterns/level.svg)](https://shepherd.dev/github/matiux/php-design-patterns)
+![security analysis status](https://github.com/matiux/php-design-patterns/actions/workflows/security-analysis.yml/badge.svg)
+![coding standards status](https://github.com/matiux/php-design-patterns/actions/workflows/coding-standards.yml/badge.svg)
+
+PHP design patterns based on the book "Head First Design Patterns" and more
 
 ## Getting Started
 ### Run Docker container
