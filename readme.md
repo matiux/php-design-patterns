@@ -161,6 +161,14 @@ way for each class of object.
 php src/Visitor/client.php
 ```
 
+### Specification
+Builds a clear specification of business rules, where objects can be checked against. The composite specification class
+has one method called isSatisfiedBy that returns either true or false depending on whether the given object satisfies
+the specification. [reference](https://designpatternsphp.readthedocs.io/en/latest/Behavioral/Specification/README.html)
+```
+php src/Specification/client.php
+```
+
 ## Extra
 
 ### Hexagonal Architecture (Ports and Adapters)

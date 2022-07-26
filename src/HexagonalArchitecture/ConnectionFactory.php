@@ -15,7 +15,6 @@ class ConnectionFactory
 
     protected function __construct()
     {
-
     }
 
     public static function create(): Connection
@@ -29,7 +28,7 @@ class ConnectionFactory
             'driver' => 'pdo_mysql',
         ];
 
-        /** @psalm-suppress MixedArgumentTypeCoercion */
+        /** @psalm-suppress MixedArgumentTypeCoercion, InvalidArgument */
         return DriverManager::getConnection(static::$connectionParams, new Configuration());
     }
 
